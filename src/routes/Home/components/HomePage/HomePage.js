@@ -17,77 +17,31 @@ function Home() {
   return (
     <div className={classes.root}>
       <Typography variant="h3" component="h3" gutterBottom>
-        Home Page
+        e-Pola
       </Typography>
       <Paper>
         <Grid container justify="center">
           <Grid item xs className={classes.section}>
             <Typography variant="h6" gutterBottom>
-              Routing
+              Welcome to the e-Pola!
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
-              Redirecting and route protection done using:
+              You can Log In and start adding your basic needs in this distressing times.
             </Typography>
-            <div>
-              <span>
-                <a
-                  href={reactRouterUrl}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  react-router
-                </a>
-              </span>
-              <span> and </span>
-              <a
-                href="https://github.com/mjrussell/redux-auth-wrapper"
-                target="_blank"
-                rel="noopener noreferrer">
-                redux-auth-wrapper
-              </a>
-            </div>
-          </Grid>
-          <Grid item xs className={classes.section}>
-            <Typography variant="h6" gutterBottom>
-              Auth
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-              User is redirected to <pre>/login</pre> if not authenticated and
-              trying to vist:
-            </Typography>
-            <ul>
+            <ol>
               <li>
-                <Link to={NEEDS_PATH}>Needs</Link>
+                Log In first
               </li>
               <li>
-                <Link to={ACCOUNT_PATH}>Account</Link>
+                You can add your needs
               </li>
-            </ul>
-          </Grid>
-          <Grid item xs className={classes.section}>
-            <Typography variant="h6" gutterBottom>
-              Forms
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-              User is redirected to <pre>/login</pre> if not authenticated and
-              trying to vist:
-            </Typography>
-            <div>
-              <span>
-                <a
-                  href="https://react-hook-form.com/"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  react-hook-form
-                </a>
-              </span>
-            </div>
-            <span>The following routes use react-hook-form:</span>
-            <Link to={NEEDS_PATH}>
-              <p>Needs</p>
-            </Link>
-            <Link to={ACCOUNT_PATH}>
-              <p>Account Page</p>
-            </Link>
+              <li>
+                Your needs will be visible to our autorized vendors
+              </li>
+              <li>
+                They will come and fulfill your needs
+              </li>
+            </ol>
           </Grid>
         </Grid>
       </Paper>

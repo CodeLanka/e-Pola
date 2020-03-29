@@ -5,6 +5,5 @@ export default (theme) => ({
   section: {
     ...theme.flexColumnCenter,
     padding: theme.spacing(2),
-    textAlign: 'center'
   }
 })
