@@ -12,6 +12,9 @@ build
 src/config.js
 .env
 
+#Firebase cache
+.firebase/**.cache
+
 # Functions
 functions/etc
 functions/dist
