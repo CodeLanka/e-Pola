@@ -1,0 +1,44 @@
+{
+  "projects": {
+    "default": "e-pola",
+    "master": "e-pola",
+    "prod": "e-pola"
+  },
+  "ci": {
+    "copyVersion": true,
+    "createConfig": {
+      "master": {
+        "env": "staging",
+        "firebase": {
+          "apiKey": "AIzaSyBMrZtNO-Cm6txhVT1jiuUO4b6CXD49wqU",
+          "authDomain": "e-pola.firebaseapp.com",
+          "databaseURL": "https://e-pola.firebaseio.com",
+          "projectId": "e-pola",
+          "storageBucket": "e-pola.appspot.com",
+          "messagingSenderId": "603781866835",
+          "measurementId": "G-T1ZELGH0G6",
+          "appId": "1:603781866835:web:9b49a45849b896ec506da6"
+        },
+        "sentryDsn": "https://4d2db6ea142949e886cb5d062f3e8122@sentry.io/5178998",
+        "segmentId": "gcszsb8rn4",
+        "publicVapidKey": "BFU2jA7F_knslLUEFWeEfBd-_kiTtm8OsC0ms__OHDENnpbEP4jVhSH0z-7G0Ap_9a5HFVyvfgwDTC_8eC1bhcc"
+      },
+      "prod": {
+        "env": "production",
+        "firebase": {
+          "apiKey": "AIzaSyBMrZtNO-Cm6txhVT1jiuUO4b6CXD49wqU",
+          "authDomain": "e-pola.firebaseapp.com",
+          "databaseURL": "https://e-pola.firebaseio.com",
+          "projectId": "e-pola",
+          "storageBucket": "e-pola.appspot.com",
+          "messagingSenderId": "603781866835",
+          "measurementId": "G-T1ZELGH0G6",
+          "appId": "1:603781866835:web:9b49a45849b896ec506da6"
+        },
+        "sentryDsn": "https://4d2db6ea142949e886cb5d062f3e8122@sentry.io/5178998",
+        "segmentId": "gcszsb8rn4",
+        "publicVapidKey": "BFU2jA7F_knslLUEFWeEfBd-_kiTtm8OsC0ms__OHDENnpbEP4jVhSH0z-7G0Ap_9a5HFVyvfgwDTC_8eC1bhcc"
+      }
+    }
+  }
+}

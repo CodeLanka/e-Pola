@@ -1,0 +1,29 @@
+{
+  "generator-react-firebase": {
+    "promptValues": {
+      "githubUser": "agentmilindu",
+      "firebaseName": "e-pola",
+      "firebaseKey": "AIzaSyBMrZtNO-Cm6txhVT1jiuUO4b6CXD49wqU",
+      "includeRedux": true,
+      "includeFirestore": true,
+      "otherFeatures": [
+        "Continuous Integration config",
+        "Firebase Cloud Messaging",
+        "Firebase Functions (with ESNext support)",
+        "Tests for Firebase Functions (Mocha + Chai)",
+        "Tests for React Components (Jest)",
+        "Tests for UI (Cypress)",
+        "Firebase Analytics",
+        "Segment.io Analytics",
+        "Error Tracking (Sentry.io)",
+        "Client Side Error Reporting (Stackdriver)"
+      ],
+      "messagingSenderId": "603781866835",
+      "measurementId": "G-T1ZELGH0G6",
+      "appId": "1:603781866835:web:9b49a45849b896ec506da6",
+      "firebasePublicVapidKey": "BFU2jA7F_knslLUEFWeEfBd-_kiTtm8OsC0ms__OHDENnpbEP4jVhSH0z-7G0Ap_9a5HFVyvfgwDTC_8eC1bhcc",
+      "ciProvider": "githubActions",
+      "deployTo": "firebase"
+    }
+  }
+}
