@@ -9,14 +9,14 @@ import {
 import { useSelector } from 'react-redux'
 import { useNotifications } from 'modules/notification'
 import LoadingSpinner from 'components/LoadingSpinner'
-import ProjectTile from '../ProjectTile'
-import NewProjectTile from '../NewProjectTile'
-import NewProjectDialog from '../NewProjectDialog'
-import styles from './ProjectsList.styles'
+import NeedTile from '../NeedTile'
+import NewNeedTile from '../NewNeedTile'
+import NewNeedDialog from '../NewNeedDialog'
+import styles from './NeedsList.styles'
 
 const useStyles = makeStyles(styles)
 
-function useProjectsList() {
+function useNeedsList() {
   const { showSuccess, showError } = useNotifications()
   const firestore = useFirestore()
 
@@ -25,72 +25,73 @@ function useProjectsList() {
 
   useFirestoreConnect([
     {
-      collection: 'projects',
+      collection: 'needs',
       where: ['createdBy', '==', auth.uid]
     }
   ])
 
-  // Get projects from redux state
-  const projects = useSelector(({ firestore: { ordered } }) => ordered.projects)
+  // Get needs from redux state
+  const needs = useSelector(({ firestore: { ordered } }) => ordered.needs)
 
   // New dialog
   const [newDialogOpen, changeDialogState] = useState(false)
   const toggleDialog = () => changeDialogState(!newDialogOpen)
 
-  function addProject(newInstance) {
+  function addNeed(newInstance) {
     if (!auth.uid) {
-      return showError('You must be logged in to create a project')
+      return showError('You must be logged in to create a need')
     }
     return firestore
-      .add('projects', {
+      .add('needs', {
         ...newInstance,
         createdBy: auth.uid,
         createdAt: firestore.FieldValue.serverTimestamp()
       })
       .then(() => {
         toggleDialog()
-        showSuccess('Project added successfully')
+        showSuccess('Need added successfully')
       })
       .catch((err) => {
         console.error('Error:', err) // eslint-disable-line no-console
-        showError(err.message || 'Could not add project')
+        showError(err.message || 'Could not add need')
         return Promise.reject(err)
       })
   }
 
-  return { projects, addProject, newDialogOpen, toggleDialog }
+  return { needs, addNeed, newDialogOpen, toggleDialog }
 }
 
-function ProjectsList() {
+function NeedsList() {
   const classes = useStyles()
   const {
-    projects,
-    addProject,
+    needs,
+    addNeed,
     newDialogOpen,
     toggleDialog
-  } = useProjectsList()
+  } = useNeedsList()
 
-  // Show spinner while projects are loading
-  if (!isLoaded(projects)) {
+  // Show spinner while needs are loading
+  if (!isLoaded(needs)) {
     return <LoadingSpinner />
   }
 
   return (
     <div className={classes.root}>
-      <NewProjectDialog
-        onSubmit={addProject}
+      <NewNeedDialog
+        onSubmit={addNeed}
         open={newDialogOpen}
         onRequestClose={toggleDialog}
       />
       <div className={classes.tiles}>
-        <NewProjectTile onClick={toggleDialog} />
-        {!isEmpty(projects) &&
-          projects.map((project, ind) => {
+        <NewNeedTile onClick={toggleDialog} />
+        {!isEmpty(needs) &&
+          needs.map((need, ind) => {
             return (
-              <ProjectTile
-                key={`Project-${project.id}-${ind}`}
-                name={project && project.name}
-                projectId={project.id}
+              <NeedTile
+                key={`Need-${need.id}-${ind}`}
+                name={need && need.name}
+                amount={need && need.amount}
+                needId={need.id}
               />
             )
           })}
@@ -99,4 +100,4 @@ function ProjectsList() {
   )
 }
 
-export default ProjectsList
+export default NeedsList

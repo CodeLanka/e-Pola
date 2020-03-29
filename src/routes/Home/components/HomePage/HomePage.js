@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
-import { ACCOUNT_PATH, LIST_PATH } from 'constants/paths'
+import { ACCOUNT_PATH, NEEDS_PATH } from 'constants/paths'
 import styles from './HomePage.styles'
 
 const reactRouterUrl = 'https://github.com/ReactTraining/react-router'
@@ -56,7 +56,7 @@ function Home() {
             </Typography>
             <ul>
               <li>
-                <Link to={LIST_PATH}>Projects</Link>
+                <Link to={NEEDS_PATH}>Needs</Link>
               </li>
               <li>
                 <Link to={ACCOUNT_PATH}>Account</Link>
@@ -82,8 +82,8 @@ function Home() {
               </span>
             </div>
             <span>The following routes use react-hook-form:</span>
-            <Link to={LIST_PATH}>
-              <p>Projects</p>
+            <Link to={NEEDS_PATH}>
+              <p>Needs</p>
             </Link>
             <Link to={ACCOUNT_PATH}>
               <p>Account Page</p>

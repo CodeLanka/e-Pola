@@ -1,21 +1,21 @@
 import React from 'react'
 import Card from '@material-ui/core/Card'
 import { makeStyles } from '@material-ui/core/styles'
-import ProjectData from '../ProjectData'
-import styles from './ProjectPage.styles'
+import NeedData from '../NeedData'
+import styles from './NeedPage.styles'
 
 const useStyles = makeStyles(styles)
 
-function ProjectPage() {
+function NeedPage() {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
       <Card className={classes.card}>
-        <ProjectData />
+        <NeedData />
       </Card>
     </div>
   )
 }
 
-export default ProjectPage
+export default NeedPage

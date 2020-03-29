@@ -27,5 +27,13 @@ export default (theme) => ({
     '&:visited': {
       textDecoration: 'none'
     }
+  },
+  amount: {
+    fontSize: '1.5rem',
+    fontColor: '#333',
+    textDecoration: 'none',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
   }
 })

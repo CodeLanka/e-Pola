@@ -22,7 +22,7 @@ function NavbarWithoutAuth({ children, brandPath }) {
           to={brandPath || '/'}
           className={classes.brand}
           data-test="brand">
-          Myproject
+          e-Pola
         </Typography>
         <div className={classes.flex} />
         {children}

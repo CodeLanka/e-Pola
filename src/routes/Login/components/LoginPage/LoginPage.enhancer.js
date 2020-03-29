@@ -1,4 +1,4 @@
 import { UserIsNotAuthenticated } from 'utils/router'
 
-// redirect to /projects if user is already authed
+// redirect to /needs if user is already authed
 export default UserIsNotAuthenticated

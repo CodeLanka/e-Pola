@@ -7,29 +7,29 @@ import IconButton from '@material-ui/core/IconButton'
 import Tooltip from '@material-ui/core/Tooltip'
 import DeleteIcon from '@material-ui/icons/Delete'
 import { makeStyles } from '@material-ui/core/styles'
-import { LIST_PATH } from 'constants/paths'
+import { NEEDS_PATH } from 'constants/paths'
 import useNotifications from 'modules/notification/useNotifications'
-import styles from './ProjectTile.styles'
+import styles from './NeedTile.styles'
 
 const useStyles = makeStyles(styles)
 
-function ProjectTile({ name, projectId, showDelete }) {
+function NeedTile({ name, needId, amount, showDelete }) {
   const classes = useStyles()
   const history = useHistory()
   const firestore = useFirestore()
   const { showError, showSuccess } = useNotifications()
 
-  function goToProject() {
-    return history.push(`${LIST_PATH}/${projectId}`)
+  function goToNeed() {
+    return history.push(`${NEEDS_PATH}/${needId}`)
   }
 
-  function deleteProject() {
+  function deleteNeed() {
     return firestore
-      .delete(`projects/${projectId}`)
-      .then(() => showSuccess('Project deleted successfully'))
+      .delete(`needs/${needId}`)
+      .then(() => showSuccess('Need deleted successfully'))
       .catch((err) => {
         console.error('Error:', err) // eslint-disable-line no-console
-        showError(err.message || 'Could not delete project')
+        showError(err.message || 'Could not delete need')
         return Promise.reject(err)
       })
   }
@@ -37,29 +37,33 @@ function ProjectTile({ name, projectId, showDelete }) {
   return (
     <Paper className={classes.root}>
       <div className={classes.top}>
-        <span className={classes.name} onClick={goToProject}>
+        <span className={classes.name} onClick={goToNeed}>
           {name || 'No Name'}
         </span>
         {showDelete ? (
           <Tooltip title="delete">
-            <IconButton onClick={deleteProject}>
+            <IconButton onClick={deleteNeed}>
               <DeleteIcon />
             </IconButton>
           </Tooltip>
         ) : null}
       </div>
+    <span className={classes.amount}>
+      {amount || ''}
+    </span>
     </Paper>
   )
 }
 
-ProjectTile.propTypes = {
-  projectId: PropTypes.string.isRequired,
+NeedTile.propTypes = {
+  needId: PropTypes.string.isRequired,
   showDelete: PropTypes.bool,
-  name: PropTypes.string
+  name: PropTypes.string,
+  amount: PropTypes.string,
 }
 
-ProjectTile.defaultProps = {
+NeedTile.defaultProps = {
   showDelete: true
 }
 
-export default ProjectTile
+export default NeedTile

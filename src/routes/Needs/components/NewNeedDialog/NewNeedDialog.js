@@ -8,11 +8,11 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
-import styles from './NewProjectDialog.styles'
+import styles from './NewNeedDialog.styles'
 
 const useStyles = makeStyles(styles)
 
-function NewProjectDialog({ onSubmit, open, onRequestClose }) {
+function NewNeedDialog({ onSubmit, open, onRequestClose }) {
   const classes = useStyles()
   const {
     register,
@@ -23,14 +23,25 @@ function NewProjectDialog({ onSubmit, open, onRequestClose }) {
 
   return (
     <Dialog open={open} onClose={onRequestClose}>
-      <DialogTitle id="new-project-dialog-title">New Project</DialogTitle>
+      <DialogTitle id="new-need-dialog-title">New Need</DialogTitle>
       <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
         <DialogContent>
           <TextField
             error={!!errors.name}
             helperText={errors.name && 'Name is required'}
             name="name"
-            label="Project Name"
+            label="What you want?"
+            inputRef={register({
+              required: true
+            })}
+            margin="normal"
+            fullWidth
+          />
+          <TextField
+            error={!!errors.amount}
+            helperText={errors.amount && 'Amount is required'}
+            name="amount"
+            label="How much you want?"
             inputRef={register({
               required: true
             })}
@@ -46,7 +57,7 @@ function NewProjectDialog({ onSubmit, open, onRequestClose }) {
             type="submit"
             color="primary"
             disabled={isSubmitting || !isValid}>
-            {isSubmitting ? 'Creating...' : 'Create'}
+            {isSubmitting ? 'Requesting...' : 'Request'}
           </Button>
         </DialogActions>
       </form>
@@ -54,10 +65,10 @@ function NewProjectDialog({ onSubmit, open, onRequestClose }) {
   )
 }
 
-NewProjectDialog.propTypes = {
+NewNeedDialog.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   onRequestClose: PropTypes.func.isRequired
 }
 
-export default NewProjectDialog
+export default NewNeedDialog

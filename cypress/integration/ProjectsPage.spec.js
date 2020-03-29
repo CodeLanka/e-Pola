@@ -1,33 +1,33 @@
 import { createSelector } from '../utils'
 
-describe('Projects Page', () => {
+describe('Needs Page', () => {
   beforeEach(() => {
     // Login using custom token
     cy.login()
-    // Go to projects page
-    cy.visit('/projects')
+    // Go to needs page
+    cy.visit('/needs')
   })
 
-  describe('Add Project', () => {
-    it('creates project when provided a valid name', () => {
-      const newProjectTitle = 'Test project'
-      cy.get(createSelector('new-project-tile')).click()
-      // Type name of new project into input
-      cy.get(createSelector('new-project-name'))
+  describe('Add Need', () => {
+    it('creates need when provided a valid name', () => {
+      const newNeedTitle = 'Test need'
+      cy.get(createSelector('new-need-tile')).click()
+      // Type name of new need into input
+      cy.get(createSelector('new-need-name'))
         .find('input')
-        .type(newProjectTitle)
-      // Click on the new project button
-      cy.get(createSelector('new-project-create-button')).click()
-      // Wait for request to Firebase to add project to return
-      cy.wait('@addProject')
-      // Confirm first project tile has title passed to new project input
+        .type(newNeedTitle)
+      // Click on the new need button
+      cy.get(createSelector('new-need-create-button')).click()
+      // Wait for request to Firebase to add need to return
+      cy.wait('@addNeed')
+      // Confirm first need tile has title passed to new need input
       cy.get(createSelector('project-tile-name'))
         .first()
-        .should('have.text', newProjectTitle)
+        .should('have.text', newNeedTitle)
     })
   })
 
-  describe('Delete Project', () => {
+  describe('Delete Need', () => {
     it('allows project to be deleted by project owner', () => {
       // click on the more button
       cy.get(createSelector('project-tile-more')).first().click()

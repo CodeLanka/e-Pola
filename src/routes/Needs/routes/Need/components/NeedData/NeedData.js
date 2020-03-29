@@ -6,37 +6,37 @@ import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import { useSelector } from 'react-redux'
 import LoadingSpinner from 'components/LoadingSpinner'
 
-function ProjectData() {
-  const { projectId } = useParams()
+function NeedData() {
+  const { needId } = useParams()
 
-  // Create listener for projects
-  useFirestoreConnect([{ collection: 'projects', doc: projectId }])
+  // Create listener for needs
+  useFirestoreConnect([{ collection: 'needs', doc: needId }])
 
-  // Get projects from redux state
-  const project = useSelector(
+  // Get needs from redux state
+  const need = useSelector(
     ({
       firestore: {
-        data: { projects }
+        data: { needs }
       }
-    }) => projects && projects[projectId]
+    }) => needs && needs[needId]
   )
 
-  // Show loading spinner while project is loading
-  if (!isLoaded(project)) {
+  // Show loading spinner while need is loading
+  if (!isLoaded(need)) {
     return <LoadingSpinner />
   }
 
   return (
     <CardContent>
       <Typography component="h2">
-        {(project && project.name) || 'Project'}
+        {(need && need.name) || 'Need'}
       </Typography>
-      <Typography>{projectId}</Typography>
+      <Typography>{needId}</Typography>
       <div style={{ marginTop: '4rem' }}>
-        <pre>{JSON.stringify(project, null, 2)}</pre>
+        <pre>{JSON.stringify(need, null, 2)}</pre>
       </div>
     </CardContent>
   )
 }
 
-export default ProjectData
+export default NeedData

@@ -17,14 +17,14 @@ service cloud.firestore {
       allow write: if false; // only written to by indexUser cloud function
     }
 
-    // Projects
-    match /projects/{projectId} {
-      // Only projects you own can be viewed
+    // Needs
+    match /needs/{needId} {
+      // Only needs you own can be viewed
       allow create: if isOwner(request.resource);
       allow read, update, delete: if isOwner(resource);
       // Rules apply to all child collections
       match /{allChildren=**} {
-        allow read, write: if isOwner(get(/databases/$(database)/documents/projects/$(projectId)));
+        allow read, write: if isOwner(get(/databases/$(database)/documents/needs/$(needId)));
       }
     }
   }

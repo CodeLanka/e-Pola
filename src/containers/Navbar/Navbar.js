@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty } from 'react-redux-firebase'
-import { LIST_PATH, LOGIN_PATH } from 'constants/paths'
+import { NEEDS_PATH, LOGIN_PATH } from 'constants/paths'
 import AccountMenu from './AccountMenu'
 import NavbarWithoutAuth from './NavbarWithoutAuth'
 import styles from './Navbar.styles'
@@ -19,7 +19,7 @@ function Navbar() {
   const authExists = isLoaded(auth) && !isEmpty(auth)
 
   return (
-    <NavbarWithoutAuth brandPath={authExists ? LIST_PATH : '/'}>
+    <NavbarWithoutAuth brandPath={authExists ? NEEDS_PATH : '/'}>
       {authExists ? (
         <AccountMenu />
       ) : (
