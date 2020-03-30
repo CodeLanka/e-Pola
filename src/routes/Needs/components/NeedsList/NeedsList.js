@@ -13,15 +13,29 @@ import NeedTile from '../NeedTile'
 import NewNeedTile from '../NewNeedTile'
 import NewNeedDialog from '../NewNeedDialog'
 import styles from './NeedsList.styles'
+import { usePosition } from 'use-position'
 
 const useStyles = makeStyles(styles)
 
 function useNeedsList() {
   const { showSuccess, showError } = useNotifications()
   const firestore = useFirestore()
+  let lat = ''
+  let lon = ''
 
   // Get auth from redux state
-  const auth = useSelector(({ firebase: { auth } }) => auth)
+  const auth = useSelector(({ firebase: { auth, profile } }) => auth)
+  const profile = useSelector(({ firebase: { profile } }) => profile)
+  const { latitude, longitude } = usePosition()
+
+  if (profile.location) {
+    const { lat: latitude, lon: longitude } = profile.location
+    lat = latitude
+    lon = longitude
+  } else if (latitude && longitude) {
+    lat = latitude
+    lon = longitude
+  }
 
   useFirestoreConnect([
     {
@@ -41,10 +55,10 @@ function useNeedsList() {
     if (!auth.uid) {
       return showError('You must be logged in to create a need')
     }
-    console.log("newInstance", newInstance)
     return firestore
       .add('needs', {
         ...newInstance,
+        location: { lat, lon },
         createdBy: auth.uid,
         createdAt: firestore.FieldValue.serverTimestamp()
       })
@@ -64,12 +78,7 @@ function useNeedsList() {
 
 function NeedsList() {
   const classes = useStyles()
-  const {
-    needs,
-    addNeed,
-    newDialogOpen,
-    toggleDialog
-  } = useNeedsList()
+  const { needs, addNeed, newDialogOpen, toggleDialog } = useNeedsList()
 
   // Show spinner while needs are loading
   if (!isLoaded(needs)) {
@@ -85,7 +94,6 @@ function NeedsList() {
       />
       <div className={classes.tiles}>
         <NewNeedTile onClick={toggleDialog} />
-        {console.log(needs)}
         {!isEmpty(needs) &&
           needs.map((need, ind) => {
             return (
