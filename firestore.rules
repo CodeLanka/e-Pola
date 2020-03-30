@@ -5,6 +5,12 @@ service cloud.firestore {
       return res.data.createdBy == request.auth.uid
     }
 
+    // Public products
+    match /products/{productsId} {
+      allow read;
+      allow write: if false;
+    }
+
     // Private user profiles
     match /users/{userId} {
       allow read;
