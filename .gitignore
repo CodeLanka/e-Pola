@@ -13,7 +13,7 @@ src/config.js
 .env
 
 #Firebase cache
-.firebase/*
+.firebase/**
 
 # Functions
 functions/etc
