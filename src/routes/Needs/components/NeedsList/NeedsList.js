@@ -41,6 +41,7 @@ function useNeedsList() {
     if (!auth.uid) {
       return showError('You must be logged in to create a need')
     }
+    console.log("newInstance", newInstance)
     return firestore
       .add('needs', {
         ...newInstance,
@@ -84,6 +85,7 @@ function NeedsList() {
       />
       <div className={classes.tiles}>
         <NewNeedTile onClick={toggleDialog} />
+        {console.log(needs)}
         {!isEmpty(needs) &&
           needs.map((need, ind) => {
             return (
