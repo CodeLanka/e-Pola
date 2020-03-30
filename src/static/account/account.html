@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.8.x-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./helpers.css">
+    <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/411/411712.svg" />
+    <style>
+        .is-primary {
+            color: black !important;
+            background-color: #fbd561 !important;
+        }
+        .inline {
+            display: inline !important;
+        }
+        .is-outlined {
+            background-color: transparent !important;
+            border: 2px solid;
+            border-color: #363636 !important;
+        }
+    </style>
+    <title>My Account</title>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <img src="./truckz.svg" width="112" height="28">
+            </a>
+        </div>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menubar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div id="menubar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">Home</a>
+                <a class="navbar-item">About</a>
+                <a class="navbar-item">Needs</a>
+                <a class="navbar-item">Bla Bla</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" href="#">
+                            <i class="fa fa-user" aria-hidden="true"></i> &nbsp;
+                            Sign Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-2">
+        <div class="columns">
+            <div class="column  is-2"></div>
+            <div class="column is-3 is-primary has-text-centered">
+                <center>
+                    <figure class="image is-128x128" style="align-items: center;">
+                        <img class="is-rounded" src="https://lh3.googleusercontent.com/a-/AOh14GjWqJjZ3_iLjTEwO4u9eBiJ_mJouk4aIBUA1g6cQw">
+                    </figure>
+                </center>
+                <h1 class="title is-6 mt-2 mb-0">Linked Accounts</h1>
+                <i class="fa fa-google"></i>
+                <h1 class="subtitle is-6 inline">Suvinnimnaka</h1>
+            </div>
+            <div class="column is-4 is-primary">
+                <h1 class='title is-3'>Account Settings</h1>
+                <div class="details">
+                    <div class="field">
+                        <label class="label has-text-left">Display Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="text" placeholder="Text input" value="Gotabaya">
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <p class="help">Error messages goes here</p>
+                    </div>
+                    <div class="field">
+                        <label class="label has-text-left">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="email" placeholder="Text input" value="gotabaya@rajaya.lk">
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label has-text-left">Avatar URL</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="text" placeholder="Text input"
+                                value="https://lh3.googleusercontent.com/a-/AOh1">
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-globe"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <button class="button is-outlined">Save</button>
+                </div>
+            </div>
+            <div class="column  is-2"></div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
