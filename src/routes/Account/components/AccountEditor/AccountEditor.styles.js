@@ -1,13 +1,29 @@
 export default (theme) => ({
   avatarCurrent: {
-    width: '100%',
+    width: '50%',
     maxWidth: '13rem',
-    marginTop: '3rem',
     height: 'auto',
     cursor: 'pointer'
   },
   gridItem: {
     textAlign: 'center',
-    marginTop: theme.spacing(5)
+    display: 'flex',
+    flexDirection: 'column',
+    // marginTop: theme.spacing(5),
+    justify: 'center',
+    alignItems: 'center'
+  },
+  linkedAccounts: {
+    marginTop: '2rem',
+    justifyContent: 'center',
+    alignContent: 'center'
+  },
+  userName: {
+    fontSize: '15px'
+  },
+  linkedItem: {
+    flexDirection: 'row',
+    display: 'flex',
+    justifyContent: 'center'
   }
 })

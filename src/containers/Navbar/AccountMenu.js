@@ -10,7 +10,7 @@ import { ACCOUNT_PATH } from 'constants/paths'
 
 const useStyles = makeStyles(() => ({
   buttonRoot: {
-    color: 'white'
+    color: '#363636'
   }
 }))
 

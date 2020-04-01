@@ -8,5 +8,13 @@ export default (theme) => ({
   fields: {
     width: '100%',
     marginBottom: '2rem'
+  },
+  btnSave: {
+    color: '#363636',
+    backgroundColor: 'transparent',
+    borderColor: '#363636'
+  },
+  settingsTitle: {
+    color: '#363636'
   }
 })
