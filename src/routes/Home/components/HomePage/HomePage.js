@@ -44,7 +44,10 @@ function Home() {
           <Typography variant="subtitle2" gutterBottom>
             Developed By:
           </Typography>
-          <a href="http://codelanka.org">
+          <a
+            href="http://codelanka.org"
+            target="_blank"
+            rel="noopener noreferrer">
             <Image
               src="http://codelanka.github.io/images/logo.png"
               imageStyle={{
