@@ -7,7 +7,10 @@ export default (theme) => ({
     ...theme.flexColumnCenter
   },
   selection: {
-    width: '100%'
+    width: '50%',
+    [theme.breakpoints.up(600)]: {
+      width: '100%'
+    }
   },
   buttons: {
     ...theme.flexColumnCenter
