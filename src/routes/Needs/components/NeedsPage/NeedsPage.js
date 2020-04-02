@@ -13,7 +13,7 @@ function NeedsPage({ match }) {
       <div>
         <NeedsHero />
         <Image
-          src="https://cdn.dribbble.com/users/125186/screenshots/5368944/scooter-courier.gif"
+          src="/img/needsbanner.gif"
           imageStyle={{ width: '300px', height: 'auto', position: 'relative' }}
           style={{ padding: '0', width: '100%', textAlign: 'center' }}
         />

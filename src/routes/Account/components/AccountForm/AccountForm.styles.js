@@ -16,5 +16,8 @@ export default (theme) => ({
   },
   settingsTitle: {
     color: '#363636'
+  },
+  saveDiv: {
+    textAlign: 'left!important'
   }
 })

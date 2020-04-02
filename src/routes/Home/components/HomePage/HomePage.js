@@ -22,7 +22,7 @@ function Home() {
       <Grid container spacing={3} className={classes.mainContainer}>
         <Grid item xs={12} sm={6} className={classes.leftSide}>
           <Image
-            src="https://media1.giphy.com/media/LpW8NlEe3KBlXoLpXd/source.gif"
+            src="/img/bikebanner.gif"
             imageStyle={{
               width: '300px',
               height: 'auto',
@@ -44,7 +44,7 @@ function Home() {
             Developed By:
           </Typography>
           <Image
-            src="http://codelanka.github.io/images/logo.png"
+            src="/img/codelanka.png"
             imageStyle={{
               width: '100px',
               height: 'auto',
@@ -73,7 +73,7 @@ function Home() {
               className={classes.cover}
               component="img"
               width="50%"
-              image="https://image.flaticon.com/icons/svg/701/701997.svg"
+              image="/img/step1.svg"
             />
             <div>
               <CardContent className={classes.content}>
@@ -92,7 +92,7 @@ function Home() {
               className={classes.cover}
               component="img"
               width="50%"
-              image="https://image.flaticon.com/icons/svg/616/616932.svg"
+              image="/img/step2.svg"
             />
             <div>
               <CardContent className={classes.content}>
@@ -111,7 +111,7 @@ function Home() {
               className={classes.cover}
               component="img"
               width="50%"
-              image="https://image.flaticon.com/icons/svg/616/616934.svg"
+              image="/img/step3.svg"
             />
             <div>
               <CardContent className={classes.content}>
@@ -130,7 +130,7 @@ function Home() {
               className={classes.cover}
               component="img"
               width="50%"
-              image="https://image.flaticon.com/icons/svg/706/706201.svg"
+              image="/img/step4.svg"
             />
             <div>
               <CardContent className={classes.content}>

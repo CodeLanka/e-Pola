@@ -70,7 +70,7 @@ function AccountForm({ account, onSubmit }) {
         </div>
       )}
 
-      <div style={{ textAlign: 'left!important' }}>
+      <div className={classes.saveDiv}>
         <Button
           className={classes.btnSave}
           color="primary"
