@@ -15,7 +15,7 @@ function NewNeedTile({ onClick }) {
     <Paper className={classes.root} onClick={onClick}>
       <ContentAddCircle className={classes.newIcon} />
       <Typography variant="h6" color="secondary">
-        Request new need
+        Request new item
       </Typography>
     </Paper>
   )
