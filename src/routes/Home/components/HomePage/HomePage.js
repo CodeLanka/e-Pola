@@ -37,35 +37,41 @@ function Home() {
             }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            e-Pola is a system to fulltill your basic needs in this distressing
-            times.
+            Worried about basic rations during the curfew? <br />
+            e-Pola is here to voice your needs.
           </Typography>
-          <Typography variant="subtitle1" gutterBottom>
+          <br />
+          <Typography variant="subtitle2" gutterBottom>
             Developed By:
           </Typography>
-          <Image
-            src="http://codelanka.github.io/images/logo.png"
-            imageStyle={{
-              width: '100px',
-              height: 'auto',
-              position: 'relative'
-            }}
-            style={{
-              padding: '0',
-              width: '100%',
-              textAlign: 'center',
-              marginBottom: '1.5rem',
-              flexDirection: 'column'
-            }}
-          />
+          <a
+            href="http://codelanka.org"
+            target="_blank"
+            rel="noopener noreferrer">
+            <Image
+              src="http://codelanka.github.io/images/logo.png"
+              imageStyle={{
+                width: '100px',
+                height: 'auto',
+                position: 'relative'
+              }}
+              style={{
+                padding: '0',
+                width: '100%',
+                textAlign: 'center',
+                marginBottom: '1.5rem',
+                flexDirection: 'column'
+              }}
+            />
+          </a>
         </Grid>
         <Grid item xs={12} sm={6} className={classes.rightSide}>
           <Typography variant="h4" gutterBottom classNAME={classes.welcome}>
             Welcome to the <strong className={classes.strong}>e</strong>-Pola!
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            You can Log In and start adding your basic needs in this distressing
-            times.
+            Log-in and start adding your requirements to e-Pola. This is how you
+            do that...
           </Typography>
 
           <Card className={classes.cardRoot}>
@@ -81,7 +87,7 @@ function Home() {
                   Step 1
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Log in to e-Pola.
+                  You log in to e-Pola.
                 </Typography>
               </CardContent>
             </div>
@@ -100,7 +106,7 @@ function Home() {
                   Step 2
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Request your items.
+                  You request items that you need
                 </Typography>
               </CardContent>
             </div>
@@ -119,7 +125,7 @@ function Home() {
                   Step 3
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Your needs will be visible to our autorized vendors.
+                  Authorized vendors see your requirements
                 </Typography>
               </CardContent>
             </div>
@@ -138,7 +144,7 @@ function Home() {
                   Step 4
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  They will come and fulfill your needs.
+                  Vendors will come and fulfill your needs.
                 </Typography>
               </CardContent>
             </div>
