@@ -15,6 +15,6 @@ export default () => ({
   },
   brandLogo: {
     marginRight: '1em',
-    width: '120px'
+    width: '140px'
   }
 })
