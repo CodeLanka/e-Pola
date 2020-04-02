@@ -55,7 +55,9 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
 
   return (
     <Dialog open={open} onClose={onRequestClose}>
-      <DialogTitle id="new-need-dialog-title">What you want?</DialogTitle>
+      <DialogTitle id="new-need-dialog-title" color="secondary">
+        What do you want?
+      </DialogTitle>
       <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
         <DialogContent>
           <FormControl className={classes.selection}>

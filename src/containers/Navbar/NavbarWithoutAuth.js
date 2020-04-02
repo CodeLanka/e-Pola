@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
+// import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from './Navbar.styles'
+import { Avatar } from '@material-ui/core'
+import logo from './logo.svg'
 
 const useStyles = makeStyles(styles)
 
@@ -15,15 +17,13 @@ function NavbarWithoutAuth({ children, brandPath }) {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
-        <Typography
-          color="inherit"
-          variant="h6"
+        <Avatar
+          className={classes.brandLogo}
+          variant="square"
+          src={logo}
           component={Link}
           to={brandPath || '/'}
-          className={classes.brand}
-          data-test="brand">
-          e-Pola
-        </Typography>
+        />
         <div className={classes.flex} />
         {children}
       </Toolbar>
