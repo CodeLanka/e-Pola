@@ -25,8 +25,9 @@ function LoginForm({ onSubmit }) {
     <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
       <TextField
         type="email"
+        varient="outlined"
         name="email"
-        placeholder="email"
+        label="Your Email Here..."
         margin="normal"
         fullWidth
         inputRef={register({
@@ -38,8 +39,9 @@ function LoginForm({ onSubmit }) {
       />
       <TextField
         type="password"
+        varient="outlined"
         name="password"
-        placeholder="password"
+        label="Your Password Here..."
         margin="normal"
         fullWidth
         inputRef={register({

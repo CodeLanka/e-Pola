@@ -8,6 +8,8 @@ import { useNotifications } from 'modules/notification'
 import defaultUserImageUrl from 'static/User.png'
 import AccountForm from '../AccountForm'
 import styles from './AccountEditor.styles'
+import { Avatar, Typography } from '@material-ui/core'
+import PermIdentitySharpIcon from '@material-ui/icons/PermIdentitySharp'
 
 const useStyles = makeStyles(styles)
 
@@ -37,11 +39,25 @@ function AccountEditor() {
   return (
     <Grid container spacing={2} justify="center">
       <Grid item xs={12} md={6} lg={6} className={classes.gridItem}>
-        <img
+        <Avatar
           className={classes.avatarCurrent}
+          alt="DP image"
           src={(profile && profile.avatarUrl) || defaultUserImageUrl}
-          alt=""
         />
+        <div className={classes.linkedAccounts}>
+          <Typography variant="h6" color="secondary">
+            Linked Accounts
+          </Typography>
+          <div className={classes.linkedItem}>
+            <PermIdentitySharpIcon color="secondary" />
+            <Typography
+              variant="h6"
+              color="secondary"
+              className={classes.userName}>
+              Test User
+            </Typography>
+          </div>
+        </div>
       </Grid>
       <Grid item xs={12} md={6} lg={6} className={classes.gridItem}>
         <AccountForm onSubmit={updateAccount} account={profile} />

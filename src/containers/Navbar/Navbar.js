@@ -27,6 +27,7 @@ function Navbar() {
           className={classes.signIn}
           component={Link}
           to={LOGIN_PATH}
+          color="secondary"
           data-test="sign-in">
           Sign In
         </Button>
