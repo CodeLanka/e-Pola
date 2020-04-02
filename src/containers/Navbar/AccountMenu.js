@@ -3,24 +3,13 @@ import { useFirebase } from 'react-redux-firebase'
 import { useHistory } from 'react-router-dom'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import IconButton from '@material-ui/core/IconButton'
+import Button from '@material-ui/core/Button'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import { makeStyles } from '@material-ui/core/styles'
 import { ACCOUNT_PATH, NEEDS_PATH } from 'constants/paths'
-import Typography from '@material-ui/core/Typography'
 import AssignmentIcon from '@material-ui/icons/Assignment'
 
-const useStyles = makeStyles(() => ({
-  buttonRoot: {
-    color: '#363636',
-    padding: 0,
-    marginRight: '1em'
-  },
-  menuLabel: {
-    fontSize: '12px',
-    marginRight: '5px'
-  }
-}))
+const useStyles = makeStyles(() => ({}))
 
 function AccountMenu() {
   const classes = useStyles()
@@ -49,26 +38,20 @@ function AccountMenu() {
 
   return (
     <>
-      <IconButton
+      <Button
         aria-owns={anchorEl ? 'my-needs' : null}
         aria-haspopup="false"
-        onClick={gotoNeeds}
-        classes={{ root: classes.buttonRoot }}>
-        <Typography variant="h6" className={classes.menuLabel}>
-          My Requests
-        </Typography>
+        onClick={gotoNeeds}>
+        My Requests
         <AssignmentIcon />
-      </IconButton>
-      <IconButton
+      </Button>
+      <Button
         aria-owns={anchorEl ? 'menu-appbar' : null}
         aria-haspopup="true"
-        onClick={handleMenu}
-        classes={{ root: classes.buttonRoot }}>
-        <Typography variant="h6" className={classes.menuLabel}>
-          My Account
-        </Typography>
+        onClick={handleMenu}>
+        My Account
         <AccountCircle className={classes.icon} />
-      </IconButton>
+      </Button>
       <Menu
         id="menu-appbar"
         anchorEl={anchorEl}
