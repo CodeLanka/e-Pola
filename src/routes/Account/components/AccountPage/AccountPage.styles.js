@@ -14,6 +14,8 @@ export default (theme) => ({
     ...theme.flexColumnCenter,
     justifyContent: 'space-around',
     padding: theme.spacing(6),
-    backgroundColor: amber[300]
+    backgroundColor: '#fff',
+    border: '5px solid',
+    borderColor: amber[300]
   }
 })
