@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const glob = require('glob')
 const path = require('path')
 const admin = require('firebase-admin')
