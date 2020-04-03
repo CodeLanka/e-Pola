@@ -38,7 +38,7 @@ function Home() {
           />
           <Typography variant="subtitle1" gutterBottom>
             Worried about basic rations during the curfew? <br />
-            e-Pola is here to voice your needs.
+            GIVEME.lk is here to voice your needs.
           </Typography>
           <br />
           <Typography variant="subtitle2" gutterBottom>
@@ -67,10 +67,10 @@ function Home() {
         </Grid>
         <Grid item xs={12} sm={6} className={classes.rightSide}>
           <Typography variant="h4" gutterBottom classNAME={classes.welcome}>
-            Welcome to the <strong className={classes.strong}>e</strong>-Pola!
+            Welcome to GIVE<strong className={classes.strong}>ME</strong>.lk!
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Log-in and start adding your requirements to e-Pola. This is how you
+            Log-in and start adding your requirements to GiveME. This is how you
             do that...
           </Typography>
 
@@ -87,7 +87,7 @@ function Home() {
                   Step 1
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  You log in to e-Pola.
+                  You log in to GIVEME.
                 </Typography>
               </CardContent>
             </div>

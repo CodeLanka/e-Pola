@@ -61,7 +61,7 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
       <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
         <DialogContent>
           <FormControl className={classes.selection}>
-            <InputLabel id="catagories">Catagory</InputLabel>
+            <InputLabel id="catagories">Category</InputLabel>
             <Select
               labelId="catagories"
               id="catagories-list"
