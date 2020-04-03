@@ -33,5 +33,29 @@ export default (theme) => ({
   aboutText: {
     marginTop: '1rem',
     textAlign: 'justify'
+  },
+  infoButton: {
+    color: 'black',
+    backgroundColor: amber[300]
+  },
+  btnDiv: {
+    textAlign: 'left',
+    marginTop: '1rem'
+  },
+  linkPrimary: {
+    color: '#363636'
+  },
+  linkSecondary: {
+    color: '#6ce97d'
+  },
+  partners: {
+    ...theme.flexRowCenter,
+    flex: 1,
+    marginTop: '2rem'
+  },
+  partnerBlock: {
+    ...theme.flexColumnCenter,
+    textAlign: 'center',
+    marginRight: '1rem'
   }
 })

@@ -74,9 +74,9 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
               defaultValue="">
               <MenuItem value="dairy">Dairy</MenuItem>
               <MenuItem value="meat">Meat</MenuItem>
-              <MenuItem value="vegies">Vegies</MenuItem>
+              <MenuItem value="vegies">Veggies</MenuItem>
               <MenuItem value="grains">Grains</MenuItem>
-              <MenuItem value="poluty">Poluty</MenuItem>
+              <MenuItem value="poluty">Poultry</MenuItem>
               <MenuItem value="pharmacy">Pharmacy</MenuItem>
             </Select>
           </FormControl>

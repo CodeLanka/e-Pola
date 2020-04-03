@@ -6,10 +6,33 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import { makeStyles } from '@material-ui/core/styles'
-import { ACCOUNT_PATH, NEEDS_PATH } from 'constants/paths'
+import { ACCOUNT_PATH, NEEDS_PATH, ABOUT_PATH } from 'constants/paths'
 import AssignmentIcon from '@material-ui/icons/Assignment'
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
 
-const useStyles = makeStyles(() => ({}))
+const useStyles = makeStyles((theme) => ({
+  button: {
+    textTransform: 'none',
+    marginLeft: '10px',
+    [theme.breakpoints.down(600)]: {
+      display: 'none'
+    },
+    [theme.breakpoints.up(600)]: {
+      display: 'inline-flex'
+    }
+  },
+  icon: {
+    marginLeft: '5px'
+  },
+  buttonCollapse: {
+    [theme.breakpoints.down(600)]: {
+      display: 'inline-flex'
+    },
+    [theme.breakpoints.up(600)]: {
+      display: 'none'
+    }
+  }
+}))
 
 function AccountMenu() {
   const classes = useStyles()
@@ -35,23 +58,63 @@ function AccountMenu() {
   function gotoNeeds() {
     history.push(NEEDS_PATH)
   }
+  function gotoAbout() {
+    history.push(ABOUT_PATH)
+  }
 
   return (
     <>
-      <Button
-        aria-owns={anchorEl ? 'my-needs' : null}
-        aria-haspopup="false"
-        onClick={gotoNeeds}>
-        My Requests
-        <AssignmentIcon />
-      </Button>
-      <Button
-        aria-owns={anchorEl ? 'menu-appbar' : null}
-        aria-haspopup="true"
-        onClick={handleMenu}>
-        My Account
-        <AccountCircle className={classes.icon} />
-      </Button>
+      <div>
+        <Button
+          className={classes.buttonCollapse}
+          aria-owns={anchorEl ? 'my-needs' : null}
+          aria-haspopup="false"
+          onClick={gotoAbout}>
+          <EmojiObjectsIcon className={classes.icon} />
+        </Button>
+        <Button
+          className={classes.buttonCollapse}
+          aria-owns={anchorEl ? 'my-needs' : null}
+          aria-haspopup="false"
+          onClick={gotoNeeds}>
+          <AssignmentIcon className={classes.icon} />
+        </Button>
+        <Button
+          className={classes.buttonCollapse}
+          aria-owns={anchorEl ? 'menu-appbar' : null}
+          aria-haspopup="true"
+          onClick={handleMenu}>
+          <AccountCircle className={classes.icon} />
+        </Button>
+      </div>
+
+      <div>
+        <Button
+          className={classes.button}
+          aria-owns={anchorEl ? 'my-needs' : null}
+          aria-haspopup="false"
+          onClick={gotoAbout}>
+          About
+          <EmojiObjectsIcon className={classes.icon} />
+        </Button>
+        <Button
+          className={classes.button}
+          aria-owns={anchorEl ? 'my-needs' : null}
+          aria-haspopup="false"
+          onClick={gotoNeeds}>
+          My Requests
+          <AssignmentIcon className={classes.icon} />
+        </Button>
+        <Button
+          className={classes.button}
+          aria-owns={anchorEl ? 'menu-appbar' : null}
+          aria-haspopup="true"
+          onClick={handleMenu}>
+          My Account
+          <AccountCircle className={classes.icon} />
+        </Button>
+      </div>
+
       <Menu
         id="menu-appbar"
         anchorEl={anchorEl}
