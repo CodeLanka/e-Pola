@@ -9,7 +9,7 @@ import defaultUserImageUrl from 'static/User.png'
 import AccountForm from '../AccountForm'
 import styles from './AccountEditor.styles'
 import { Avatar, Typography } from '@material-ui/core'
-import PermIdentitySharpIcon from '@material-ui/icons/PermIdentitySharp'
+import ProviderDataForm from '../ProviderDataForm'
 
 const useStyles = makeStyles(styles)
 
@@ -49,13 +49,9 @@ function AccountEditor() {
             Linked Accounts
           </Typography>
           <div className={classes.linkedItem}>
-            <PermIdentitySharpIcon color="secondary" />
-            <Typography
-              variant="h6"
-              color="secondary"
-              className={classes.userName}>
-              Test User
-            </Typography>
+            {!!profile && !!profile.providerData && (
+              <ProviderDataForm providerData={profile.providerData} />
+            )}
           </div>
         </div>
       </Grid>

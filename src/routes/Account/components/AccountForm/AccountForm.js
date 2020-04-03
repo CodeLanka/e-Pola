@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import { validateEmail } from 'utils/form'
-// import ProviderDataForm from '../ProviderDataForm'
 import styles from './AccountForm.styles'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import IconButton from '@material-ui/core/IconButton'
@@ -94,13 +93,6 @@ function AccountForm({ account, onSubmit }) {
           }}
         />
       </div>
-
-      {!!account && !!account.providerData && (
-        <div>
-          {/* <Typography variant="h6">Linked Accounts</Typography> */}
-          {/* <ProviderDataForm providerData={account.providerData} /> */}
-        </div>
-      )}
 
       <div className={classes.saveDiv}>
         <Button
