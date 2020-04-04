@@ -231,13 +231,12 @@ For more options on CI settings checkout the [firebase-ci docs](https://github.c
 
 [Cloud Functions runtime runs on `10`](https://cloud.google.com/functions/docs/writing/#the_cloud_functions_runtime), which is why that is what is used for the CI build version.
 
-[build-status-image]: https://img.shields.io/github/workflow/status/agentmilindu/myProject/Verify?style=flat-square
-[build-status-url]: https://github.com/agentmilindu/myProject/actions
-[climate-image]: https://img.shields.io/codeclimate/github/agentmilindu/myProject.svg?style=flat-square
-[climate-url]: https://codeclimate.com/github/agentmilindu/myProject
-[coverage-image]: https://img.shields.io/codeclimate/coverage/github/agentmilindu/myProject.svg?style=flat-square
-[coverage-url]: https://codeclimate.com/github/agentmilindu/myProject
-[license-image]: https://img.shields.io/npm/l/myProject.svg?style=flat-square
-[license-url]: https://github.com/agentmilindu/myProject/blob/master/LICENSE
+[build-status-image]: https://img.shields.io/github/workflow/status/CodeLanka/e-Pola/Verify?style=flat-square
+[build-status-url]: https://github.com/CodeLanka/e-Pola/actions
+[climate-image]: https://img.shields.io/codeclimate/github/CodeLanka/e-Pola.svg?style=flat-square
+[climate-url]: https://codeclimate.com/github/CodeLanka/e-Pola
+[coverage-image]: https://img.shields.io/codeclimate/coverage/github/CodeLanka/e-Pola.svg?style=flat-square
+[coverage-url]: https://codeclimate.com/github/CodeLanka/e-Pola
+[license-url]: https://github.com/CodeLanka/e-Pola/blob/master/LICENSE
 [code-style-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [code-style-url]: http://standardjs.com/

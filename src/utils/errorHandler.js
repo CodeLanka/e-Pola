@@ -14,7 +14,7 @@ function initStackdriverErrorReporter() {
       errorHandler.start({
         key: firebase.apiKey,
         projectId: firebase.projectId,
-        service: 'myProject-site',
+        service: 'GiveMe-lk-site',
         version
       })
     })
