@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from './Navbar.styles'
 import { Avatar } from '@material-ui/core'
-import logo from './logo.svg'
+import logo from './logo.png'
 
 const useStyles = makeStyles(styles)
 

@@ -21,7 +21,7 @@ function About() {
       <Grid container spacing={3} className={classes.mainContainer}>
         <Grid item xs={12} sm={6} className={classes.leftSide}>
           <Image
-            src="/img/logo.svg"
+            src="/img/logo.png"
             imageStyle={{
               width: '250px',
               height: 'auto',
