@@ -87,7 +87,8 @@ function Home() {
                   Step 1
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  You log in to GIVEME.
+                  You log in to GIVE
+                  <strong className={classes.strong}>ME</strong>.
                 </Typography>
               </CardContent>
             </div>
