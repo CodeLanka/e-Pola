@@ -20,7 +20,7 @@ const useStyles = makeStyles(styles)
 
 function NewNeedDialog({ onSubmit, open, onRequestClose }) {
   const classes = useStyles()
-  const [catagory, setCatagory] = React.useState('')
+  const [category, setCategory] = React.useState('')
   const [product, setProduct] = React.useState('')
   const {
     control,
@@ -31,13 +31,13 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
 
   useFirestoreConnect({
     collection: 'products',
-    where: ['catagory', '==', catagory]
+    where: ['category', '==', category]
   })
 
   const products = useSelector(({ firestore: { ordered } }) => ordered.products)
 
   const handleChange = (event) => {
-    setCatagory(event.target.value)
+    setCategory(event.target.value)
     setProduct('')
   }
 
@@ -65,12 +65,12 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
             <Select
               labelId="catagories"
               id="catagories-list"
-              value={catagory}
+              value={category}
               onChange={handleChange}
               inputRef={register({
                 required: true
               })}
-              name="catagory"
+              name="category"
               defaultValue="">
               <MenuItem value="dairy">Dairy</MenuItem>
               <MenuItem value="meat">Meat</MenuItem>
