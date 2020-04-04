@@ -6,13 +6,13 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import { validateEmail } from 'utils/form'
-// import ProviderDataForm from '../ProviderDataForm'
 import styles from './AccountForm.styles'
 import InputAdornment from '@material-ui/core/InputAdornment'
-import IconButton from '@material-ui/core/IconButton'
 import PermIdentityIcon from '@material-ui/icons/PermIdentity'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
-import PublicIcon from '@material-ui/icons/Public'
+import PhoneIcon from '@material-ui/icons/Phone'
+import FingerprintIcon from '@material-ui/icons/Fingerprint'
+import RoomIcon from '@material-ui/icons/Room'
 
 const useStyles = makeStyles(styles)
 
@@ -41,12 +41,56 @@ function AccountForm({ account, onSubmit }) {
           margin="normal"
           fullWidth
           variant="outlined"
+          inputRef={register}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton aria-label="toggle password visibility" edge="end">
-                  <PermIdentityIcon />
-                </IconButton>
+                <PermIdentityIcon />
+              </InputAdornment>
+            )
+          }}
+        />
+        <TextField
+          name="contactNumber"
+          label="Contact Number"
+          margin="normal"
+          fullWidth
+          variant="outlined"
+          inputRef={register}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <PhoneIcon />
+              </InputAdornment>
+            )
+          }}
+        />
+        <TextField
+          name="identityNumber"
+          label="NIC Number"
+          margin="normal"
+          fullWidth
+          variant="outlined"
+          inputRef={register}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <FingerprintIcon />
+              </InputAdornment>
+            )
+          }}
+        />
+        <TextField
+          name="address"
+          label="Delivery Address"
+          margin="normal"
+          fullWidth
+          variant="outlined"
+          inputRef={register}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <RoomIcon />
               </InputAdornment>
             )
           }}
@@ -69,39 +113,12 @@ function AccountForm({ account, onSubmit }) {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton aria-label="toggle password visibility" edge="end">
-                  <MailOutlineIcon />
-                </IconButton>
-              </InputAdornment>
-            )
-          }}
-        />
-        <TextField
-          name="avatarUrl"
-          label="Avatar URL"
-          inputRef={register}
-          margin="normal"
-          fullWidth
-          variant="outlined"
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton aria-label="toggle password visibility" edge="end">
-                  <PublicIcon />
-                </IconButton>
+                <MailOutlineIcon />
               </InputAdornment>
             )
           }}
         />
       </div>
-
-      {!!account && !!account.providerData && (
-        <div>
-          {/* <Typography variant="h6">Linked Accounts</Typography> */}
-          {/* <ProviderDataForm providerData={account.providerData} /> */}
-        </div>
-      )}
-
       <div className={classes.saveDiv}>
         <Button
           className={classes.btnSave}
