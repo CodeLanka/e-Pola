@@ -1,6 +1,6 @@
 {
-  "name": "myProject-functions",
-  "description": "Cloud Functions for myProject",
+  "name": "GiveMe-lk-functions",
+  "description": "Cloud Functions for GiveMe.lk",
   "version": "0.0.1",
   "main": "index.js",
   "private": true,
