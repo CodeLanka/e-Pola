@@ -44,19 +44,51 @@ function About() {
         </Grid>
         <Grid item xs={12} sm={6} className={classes.rightSide}>
           <Typography variant="h4" gutterBottom classNAME={classes.welcome}>
-            Who Are We?
+            What is Give<strong className={classes.strong}>ME</strong>.lk?
           </Typography>
           <Typography varient="subtitle3" className={classes.aboutText}>
-            GDG Sri Lanka is a community of tech enthusiasts who are interested
-            in Google Developer Technologies and technical advancements in the
-            world. GDG’s are independent groups that are supported by Google but
-            not part of it.We are a non-profit entity which strive for
-            improvement of the tech education of the local developers. We engage
-            in several events and programs to enrich the local developers with
-            global knowledge.
+            Give<strong className={classes.strong}>ME</strong>.lk is a platform
+            aimed at connecting people with wholesale and retail businesses
+            during the SARS-CoV-2 breakout's social distancing period.
+            <br />
+            Our goal is to tell the sellers where the requirement exists for
+            their produce to make the home delivery more efficient for them and
+            more effective for people who are expecting goods and services.
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} className={classes.leftSide} />
+        <Grid item xs={12} sm={6} className={classes.rightSide}>
+          <Typography variant="h4" gutterBottom classNAME={classes.welcome}>
+            Who is involved?
+          </Typography>
+          <Typography varient="subtitle3" className={classes.aboutText}>
+            This is an idea by the co-founders of{' '}
+            <a
+              href="http://siyomek.com"
+              target="_blank"
+              rel="noopener noreferrer">
+              Siyomek
+            </a>
+            , Harshadewa Ariyasinghe and Keshan Sodimana. <br />
+            The project is run as an open-sourced{' '}
+            <a
+              href="https://github.com/codelanka/e-pola"
+              target="_blank"
+              rel="noopener noreferrer">
+              project
+            </a>
+            &nbsp;by CodeLanka. Codelanka is an initiative by GDG Sri Lanka to
+            code things that make sense to the public, irrespective of the
+            existence of a financial gain.
           </Typography>
           <div className={classes.btnDiv}>
-            <Button className={classes.infoButton}>More Info</Button>
+            <Button
+              href="http://codelanka.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.infoButton}>
+              Read about CodeLanka
+            </Button>
           </div>
         </Grid>
       </Grid>
