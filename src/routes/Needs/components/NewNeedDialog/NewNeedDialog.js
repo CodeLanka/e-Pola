@@ -72,12 +72,12 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
               })}
               name="category"
               defaultValue="">
-              <MenuItem value="dairy">Dairy</MenuItem>
-              <MenuItem value="meat">Meat</MenuItem>
-              <MenuItem value="vegies">Veggies</MenuItem>
-              <MenuItem value="grains">Grains</MenuItem>
-              <MenuItem value="poluty">Poultry</MenuItem>
-              <MenuItem value="pharmacy">Pharmacy</MenuItem>
+              <MenuItem value="dairy">Dairy 🧀🥛</MenuItem>
+              <MenuItem value="meat">Meat, Seafood & Poultry 🥩🐔🍤</MenuItem>
+              <MenuItem value="vegetables">Vegetables🥔 🥕 🍆</MenuItem>
+              <MenuItem value="grains">Grains 🌾🍚</MenuItem>
+              <MenuItem value="grocery">Grocery Items 🍛</MenuItem>
+              <MenuItem value="pharmaceuticals">Pharmacy Items 💊</MenuItem>
             </Select>
           </FormControl>
           <br />
