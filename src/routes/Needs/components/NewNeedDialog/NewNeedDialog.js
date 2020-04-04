@@ -72,12 +72,45 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
               })}
               name="category"
               defaultValue="">
-              <MenuItem value="dairy">Dairy 🧀 🥛</MenuItem>
-              <MenuItem value="meat">Meat, Seafood & Poultry 🥩 🐔 🍤</MenuItem>
-              <MenuItem value="vegetables">Vegetables 🥔 🥕 🍆</MenuItem>
-              <MenuItem value="grains">Grains 🌾 🍚</MenuItem>
-              <MenuItem value="grocery">Grocery Items 🍛</MenuItem>
-              <MenuItem value="pharmaceuticals">Pharmacy Items 💊</MenuItem>
+              <MenuItem value="dairy">
+                Dairy{' '}
+                <span className={classes.emojis} role="img" alt="Dairy">
+                  🧀🥛
+                </span>
+              </MenuItem>
+              <MenuItem value="meat">
+                Meat, Seafood & Poultry{' '}
+                <span
+                  className={classes.emojis}
+                  role="img"
+                  alt="Meat, Seafood & Poultry">
+                  🥩🐔🍤
+                </span>
+              </MenuItem>
+              <MenuItem value="vegetables">
+                Vegetables{' '}
+                <span className={classes.emojis} role="img" alt="Vegetables">
+                  🥔🥕🍆
+                </span>
+              </MenuItem>
+              <MenuItem value="grains">
+                Grains{' '}
+                <span className={classes.emojis} role="img" alt="Grains">
+                  🌾🍚
+                </span>
+              </MenuItem>
+              <MenuItem value="grocery">
+                Grocery Items{' '}
+                <span className={classes.emojis} role="img" alt="Grocery Items">
+                  🍛
+                </span>
+              </MenuItem>
+              <MenuItem value="pharmaceuticals">
+                Pharmacy Items{' '}
+                <span className={classes.emojis} role="img" alt="Grocery Items">
+                  💊
+                </span>
+              </MenuItem>
             </Select>
           </FormControl>
           <br />
