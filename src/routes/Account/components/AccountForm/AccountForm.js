@@ -8,6 +8,11 @@ import Button from '@material-ui/core/Button'
 import { validateEmail } from 'utils/form'
 // import ProviderDataForm from '../ProviderDataForm'
 import styles from './AccountForm.styles'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import IconButton from '@material-ui/core/IconButton'
+import PermIdentityIcon from '@material-ui/icons/PermIdentity'
+import MailOutlineIcon from '@material-ui/icons/MailOutline'
+import PublicIcon from '@material-ui/icons/Public'
 
 const useStyles = makeStyles(styles)
 
@@ -36,6 +41,15 @@ function AccountForm({ account, onSubmit }) {
           margin="normal"
           fullWidth
           variant="outlined"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton aria-label="toggle password visibility" edge="end">
+                  <PermIdentityIcon />
+                </IconButton>
+              </InputAdornment>
+            )
+          }}
         />
         <TextField
           label="Your Email"
@@ -52,6 +66,15 @@ function AccountForm({ account, onSubmit }) {
           error={!!errors.email}
           errorStyle={{ color: 'red' }}
           helperText={errors.email && 'Email must be valid'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton aria-label="toggle password visibility" edge="end">
+                  <MailOutlineIcon />
+                </IconButton>
+              </InputAdornment>
+            )
+          }}
         />
         <TextField
           name="avatarUrl"
@@ -60,6 +83,15 @@ function AccountForm({ account, onSubmit }) {
           margin="normal"
           fullWidth
           variant="outlined"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton aria-label="toggle password visibility" edge="end">
+                  <PublicIcon />
+                </IconButton>
+              </InputAdornment>
+            )
+          }}
         />
       </div>
 
@@ -70,7 +102,7 @@ function AccountForm({ account, onSubmit }) {
         </div>
       )}
 
-      <div style={{ textAlign: 'left!important' }}>
+      <div className={classes.saveDiv}>
         <Button
           className={classes.btnSave}
           color="primary"

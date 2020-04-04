@@ -9,7 +9,7 @@ import { useNotifications } from 'modules/notification'
 import LoginForm from '../LoginForm'
 import styles from './LoginPage.styles'
 import Image from 'material-ui-image'
-import logo from './logo.svg'
+import logo from './logo.png'
 
 const useStyles = makeStyles(styles)
 

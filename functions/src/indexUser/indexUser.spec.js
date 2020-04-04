@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import * as admin from 'firebase-admin'
 
 describe('indexUser RTDB Cloud Function (onWrite)', () => {

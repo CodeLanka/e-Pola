@@ -22,7 +22,7 @@ function Home() {
       <Grid container spacing={3} className={classes.mainContainer}>
         <Grid item xs={12} sm={6} className={classes.leftSide}>
           <Image
-            src="https://media1.giphy.com/media/LpW8NlEe3KBlXoLpXd/source.gif"
+            src="/img/bikebanner.gif"
             imageStyle={{
               width: '300px',
               height: 'auto',
@@ -38,7 +38,7 @@ function Home() {
           />
           <Typography variant="subtitle1" gutterBottom>
             Worried about basic rations during the curfew? <br />
-            e-Pola is here to voice your needs.
+            GIVEME.lk is here to voice your needs.
           </Typography>
           <br />
           <Typography variant="subtitle2" gutterBottom>
@@ -49,7 +49,7 @@ function Home() {
             target="_blank"
             rel="noopener noreferrer">
             <Image
-              src="http://codelanka.github.io/images/logo.png"
+              src="/img/codelanka.png"
               imageStyle={{
                 width: '100px',
                 height: 'auto',
@@ -67,10 +67,10 @@ function Home() {
         </Grid>
         <Grid item xs={12} sm={6} className={classes.rightSide}>
           <Typography variant="h4" gutterBottom classNAME={classes.welcome}>
-            Welcome to the <strong className={classes.strong}>e</strong>-Pola!
+            Welcome to GIVE<strong className={classes.strong}>ME</strong>.lk!
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Log-in and start adding your requirements to e-Pola. This is how you
+            Log-in and start adding your requirements to GiveME. This is how you
             do that...
           </Typography>
 
@@ -79,7 +79,7 @@ function Home() {
               className={classes.cover}
               component="img"
               width="50%"
-              image="https://image.flaticon.com/icons/svg/701/701997.svg"
+              image="/img/step1.svg"
             />
             <div>
               <CardContent className={classes.content}>
@@ -87,7 +87,7 @@ function Home() {
                   Step 1
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  You log in to e-Pola.
+                  You log in to GIVEME.
                 </Typography>
               </CardContent>
             </div>
@@ -98,7 +98,7 @@ function Home() {
               className={classes.cover}
               component="img"
               width="50%"
-              image="https://image.flaticon.com/icons/svg/616/616932.svg"
+              image="/img/step2.svg"
             />
             <div>
               <CardContent className={classes.content}>
@@ -117,7 +117,7 @@ function Home() {
               className={classes.cover}
               component="img"
               width="50%"
-              image="https://image.flaticon.com/icons/svg/616/616934.svg"
+              image="/img/step3.svg"
             />
             <div>
               <CardContent className={classes.content}>
@@ -136,7 +136,7 @@ function Home() {
               className={classes.cover}
               component="img"
               width="50%"
-              image="https://image.flaticon.com/icons/svg/706/706201.svg"
+              image="/img/step4.svg"
             />
             <div>
               <CardContent className={classes.content}>

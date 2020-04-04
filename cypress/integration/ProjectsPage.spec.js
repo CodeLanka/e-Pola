@@ -13,9 +13,7 @@ describe('Needs Page', () => {
       const newNeedTitle = 'Test need'
       cy.get(createSelector('new-need-tile')).click()
       // Type name of new need into input
-      cy.get(createSelector('new-need-name'))
-        .find('input')
-        .type(newNeedTitle)
+      cy.get(createSelector('new-need-name')).find('input').type(newNeedTitle)
       // Click on the new need button
       cy.get(createSelector('new-need-create-button')).click()
       // Wait for request to Firebase to add need to return

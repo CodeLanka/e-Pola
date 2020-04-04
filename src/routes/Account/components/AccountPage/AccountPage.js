@@ -12,7 +12,7 @@ function AccountPage() {
 
   return (
     <Grid container className={classes.root} justify="center">
-      <Grid item xs={10} md={8} lg={6} className={classes.gridItem}>
+      <Grid item xs={12} md={10} lg={8} className={classes.gridItem}>
         <Paper className={classes.pane}>
           <AccountEditor />
         </Paper>
