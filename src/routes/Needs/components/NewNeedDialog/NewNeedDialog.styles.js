@@ -12,5 +12,8 @@ export default (theme) => ({
   },
   buttons: {
     ...theme.flexColumnCenter
+  },
+  emojis: {
+    fontSize: '35px'
   }
 })
