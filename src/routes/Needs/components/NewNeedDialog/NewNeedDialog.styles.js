@@ -15,5 +15,8 @@ export default (theme) => ({
   },
   emojis: {
     fontSize: '35px'
+  },
+  upload: {
+    display: 'none'
   }
 })

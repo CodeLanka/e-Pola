@@ -58,6 +58,7 @@
     "redux-auth-wrapper": "^2.1.0",
     "redux-firestore": "^0.11.0",
     "redux-thunk": "^2.3.0",
+    "shortid": "^2.2.15",
     "use-position": "^0.0.6"
   },
   "devDependencies": {

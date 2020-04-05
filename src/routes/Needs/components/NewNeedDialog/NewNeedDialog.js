@@ -14,18 +14,25 @@ import Select from '@material-ui/core/Select/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import { useSelector } from 'react-redux'
-import { useFirestoreConnect, isEmpty } from 'react-redux-firebase'
+import { useFirebase, useFirestoreConnect, isEmpty } from 'react-redux-firebase'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import shortid from 'shortid'
 
 const useStyles = makeStyles(styles)
 
-function NewNeedDialog({ onSubmit, open, onRequestClose }) {
+function NewNeedDialog({ userId, onSubmit, open, onRequestClose }) {
   const classes = useStyles()
+  const [isUploading, setIsUploading] = React.useState(false)
+  const [uploadedFle, setUploadedFle] = React.useState('')
   const [category, setCategory] = React.useState('')
   const [product, setProduct] = React.useState('')
   const {
     control,
     register,
+    unregister,
     handleSubmit,
+    setValue,
+    reset,
     formState: { isSubmitting, isValid }
   } = useForm({ mode: 'onChange' })
 
@@ -34,7 +41,37 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
     where: ['category', '==', category]
   })
 
+  // Path within Database for metadata (also used for file Storage path)
+  const firebase = useFirebase()
+
+  const onFilesDrop = (e) => {
+    setIsUploading(true)
+    return firebase
+      .uploadFiles(
+        `uploads/${userId}`,
+        e.target.files,
+        `uploads/${userId}/img`,
+        { name: `${shortid.generate()}-${e.target.files[0].name}` }
+      )
+      .then((files) => {
+        if (files[0]) {
+          setUploadedFle(files[0].downloadURL)
+          setValue('uploadedFile', files[0].downloadURL, true)
+        }
+        setIsUploading(false)
+      })
+  }
+
   const products = useSelector(({ firestore: { ordered } }) => ordered.products)
+
+  const handleCreateRequest = (request) => {
+    setCategory('')
+    setProduct('')
+    setUploadedFle('')
+    setIsUploading(false)
+    reset()
+    return onSubmit(request)
+  }
 
   const handleChange = (event) => {
     setCategory(event.target.value)
@@ -45,6 +82,11 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
     const selectedProduct = products.find(
       (product) => product.id === event.target.value
     )
+    if (selectedProduct.needUpload) {
+      register({ name: 'uploadedFile' }, { required: true })
+    } else {
+      unregister('uploadedFile')
+    }
     setProduct(selectedProduct)
     return event.target.value
   }
@@ -58,7 +100,9 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
       <DialogTitle id="new-need-dialog-title" color="secondary">
         What do you want?
       </DialogTitle>
-      <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className={classes.root}
+        onSubmit={handleSubmit(handleCreateRequest)}>
         <DialogContent>
           <FormControl className={classes.selection}>
             <InputLabel id="catagories">Category</InputLabel>
@@ -140,26 +184,55 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
           </FormControl>
           <br />
           <br />
-          <FormControl className={classes.selection}>
-            <InputLabel id="amount">How much?</InputLabel>
-            <Controller
-              as={
-                <Select disabled={!product} labelId="amount" name="amount">
-                  {!!product &&
-                    product.units.map((unit, i) => (
+          {!!product && !product.disableUnits && product.units && (
+            <FormControl className={classes.selection}>
+              <InputLabel id="amount">How much?</InputLabel>
+              <Controller
+                as={
+                  <Select disabled={!product} labelId="amount" name="amount">
+                    {product.units.map((unit, i) => (
                       <MenuItem value={unit} key={i}>
                         {unit}
                       </MenuItem>
                     ))}
-                </Select>
-              }
-              name="amount"
-              onChange={handleChangeUnit}
-              rules={{ required: 'How much is required' }}
-              control={control}
-              defaultValue=""
-            />
-          </FormControl>
+                  </Select>
+                }
+                name="amount"
+                onChange={handleChangeUnit}
+                rules={{ required: 'How much is required' }}
+                control={control}
+                defaultValue=""
+              />
+            </FormControl>
+          )}
+          {!!product &&
+            product.needUpload &&
+            !isUploading &&
+            uploadedFle === '' && (
+              <FormControl className={classes.selection}>
+                <label htmlFor="contained-button-file">
+                  <Button variant="contained" color="primary" component="span">
+                    Upload
+                  </Button>
+                </label>
+                <input
+                  accept="image/*"
+                  className={classes.upload}
+                  id="contained-button-file"
+                  type="file"
+                  onChange={onFilesDrop}
+                />
+              </FormControl>
+            )}
+          {!!product &&
+            product.needUpload &&
+            !isUploading &&
+            uploadedFle !== '' && <i>File uploaded</i>}
+          {isUploading && (
+            <div>
+              <CircularProgress /> Uploading{' '}
+            </div>
+          )}
           <TextField
             type="hidden"
             name="name"
@@ -186,7 +259,8 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
 NewNeedDialog.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  onRequestClose: PropTypes.func.isRequired
+  onRequestClose: PropTypes.func.isRequired,
+  userId: PropTypes.string.isRequired
 }
 
 export default NewNeedDialog

@@ -2,6 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
 import 'firebase/firestore'
+import 'firebase/storage'
 import 'firebase/performance'
 import * as config from 'config'
 
@@ -20,6 +21,8 @@ export default function initializeFirebase() {
   if (firebaseConfig.measurementId) {
     firebase.analytics()
   }
+
+  firebase.storage()
 
   // Enable Firestore emulator if environment variable is set
   if (process.env.REACT_APP_FIRESTORE_EMULATOR_HOST) {

@@ -73,12 +73,12 @@ function useNeedsList() {
       })
   }
 
-  return { needs, addNeed, newDialogOpen, toggleDialog }
+  return { needs, addNeed, newDialogOpen, toggleDialog, userId: auth.uid }
 }
 
 function NeedsList() {
   const classes = useStyles()
-  const { needs, addNeed, newDialogOpen, toggleDialog } = useNeedsList()
+  const { userId, needs, addNeed, newDialogOpen, toggleDialog } = useNeedsList()
 
   // Show spinner while needs are loading
   if (!isLoaded(needs)) {
@@ -91,6 +91,7 @@ function NeedsList() {
         onSubmit={addNeed}
         open={newDialogOpen}
         onRequestClose={toggleDialog}
+        userId={userId}
       />
       <div className={classes.tiles}>
         <NewNeedTile onClick={toggleDialog} />
