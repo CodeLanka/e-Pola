@@ -17,6 +17,12 @@ service cloud.firestore {
       allow write: if request.auth.uid == userId;
     }
 
+    // Private user uploads
+    match /uploads/{userId}/img/{fileName} {
+      allow read;
+      allow write: if request.auth.uid == userId;
+    }
+
     // Public user profiles
     match /users_public/{userId} {
       allow read;
