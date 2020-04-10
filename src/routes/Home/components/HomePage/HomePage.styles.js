@@ -46,5 +46,9 @@ export default (theme) => ({
   content: {
     textAlign: 'left',
     marginLeft: '10px'
+  },
+  checkmark: {
+    marginLeft: '20px',
+    color: '#4caf50'
   }
 })
