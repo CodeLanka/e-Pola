@@ -6,6 +6,7 @@ import { version } from '../package.json'
 import { env } from './config'
 import App from './containers/App'
 import './index.css'
+import './i18n'
 
 // import * as serviceWorker from './serviceWorker'
 
