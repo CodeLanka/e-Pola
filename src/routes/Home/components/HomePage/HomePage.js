@@ -1,14 +1,23 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-// import { ACCOUNT_PATH, NEEDS_PATH } from 'constants/paths'
 import styles from './HomePage.styles'
 import Image from 'material-ui-image'
 import Card from '@material-ui/core/Card'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
+import { useSelector } from 'react-redux'
+import {
+  isLoaded,
+  isEmpty,
+  useFirestore,
+  useFirestoreConnect
+} from 'react-redux-firebase'
+import { Trans } from 'react-i18next'
+
+import DoneIcon from '@material-ui/icons/Done'
 
 // const reactRouterUrl = 'https://github.com/ReactTraining/react-router'
 
@@ -16,6 +25,20 @@ const useStyles = makeStyles(styles)
 
 function Home() {
   const classes = useStyles()
+
+  const auth = useSelector(({ firebase }) => firebase.auth)
+  const authExists = isLoaded(auth) && !isEmpty(auth)
+
+  var authUid = authExists ? auth.uid : ''
+  useFirestore()
+  useFirestoreConnect([
+    {
+      collection: 'needs',
+      where: ['createdBy', '==', authUid]
+    }
+  ])
+  const needs = useSelector(({ firestore: { ordered } }) => ordered.needs)
+  const hasUserAddedItems = needs != null && needs.length > 0
 
   return (
     <div>
@@ -37,12 +60,15 @@ function Home() {
             }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            Worried about basic rations during the curfew? <br />
-            GIVEME.lk is here to voice your needs.
+            <Trans>
+              Worried about basic rations during the curfew?
+              <br />
+              GIVEME.lk is here to voice your needs.
+            </Trans>
           </Typography>
           <br />
           <Typography variant="subtitle2" gutterBottom>
-            Developed By:
+            <Trans>Developed By</Trans>:
           </Typography>
           <a
             href="http://codelanka.org"
@@ -66,12 +92,16 @@ function Home() {
           </a>
         </Grid>
         <Grid item xs={12} sm={6} className={classes.rightSide}>
-          <Typography variant="h4" gutterBottom classNAME={classes.welcome}>
-            Welcome to GIVE<strong className={classes.strong}>ME</strong>.lk!
+          <Typography variant="h4" gutterBottom className={classes.welcome}>
+            <Trans>
+              Welcome to GIVE<strong className={classes.strong}>ME</strong>.lk!
+            </Trans>
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Log-in and start adding your requirements to GiveME. This is how you
-            do that...
+            <Trans>
+              Log-in and start adding your requirements to GiveME. This is how
+              you do that...
+            </Trans>
           </Typography>
 
           <Card className={classes.cardRoot}>
@@ -84,11 +114,19 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  Step 1
+                  <Trans>
+                    <Trans>Step</Trans>
+                  </Trans>{' '}
+                  1
+                  <span className={classes.checkmark}>
+                    {authExists && <DoneIcon />}
+                  </span>
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  You log in to GIVE
-                  <strong className={classes.strong}>ME</strong>.
+                  <Trans>
+                    You log in to GIVE
+                    <strong className={classes.strong}>ME</strong>.
+                  </Trans>
                 </Typography>
               </CardContent>
             </div>
@@ -104,10 +142,13 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  Step 2
+                  <Trans>Step</Trans> 2
+                  <span className={classes.checkmark}>
+                    {hasUserAddedItems && <DoneIcon />}
+                  </span>
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  You request items that you need
+                  <Trans>You request items that you need</Trans>
                 </Typography>
               </CardContent>
             </div>
@@ -123,10 +164,10 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  Step 3
+                  <Trans>Step</Trans> 3
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Authorized vendors see your requirements
+                  <Trans>Authorized vendors see your requirements</Trans>
                 </Typography>
               </CardContent>
             </div>
@@ -142,10 +183,10 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  Step 4
+                  <Trans>Step</Trans> 4
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Vendors will come and fulfill your needs.
+                  <Trans>Vendors will come and fulfill your needs.</Trans>
                 </Typography>
               </CardContent>
             </div>

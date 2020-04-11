@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { ACCOUNT_PATH, NEEDS_PATH, ABOUT_PATH } from 'constants/paths'
 import AssignmentIcon from '@material-ui/icons/Assignment'
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
+import { Trans } from 'react-i18next'
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -94,7 +95,7 @@ function AccountMenu() {
           aria-owns={anchorEl ? 'my-needs' : null}
           aria-haspopup="false"
           onClick={gotoAbout}>
-          About
+          <Trans>About</Trans>
           <EmojiObjectsIcon className={classes.icon} />
         </Button>
         <Button
@@ -102,7 +103,7 @@ function AccountMenu() {
           aria-owns={anchorEl ? 'my-needs' : null}
           aria-haspopup="false"
           onClick={gotoNeeds}>
-          My Requests
+          <Trans>My Requests</Trans>
           <AssignmentIcon className={classes.icon} />
         </Button>
         <Button
@@ -110,7 +111,7 @@ function AccountMenu() {
           aria-owns={anchorEl ? 'menu-appbar' : null}
           aria-haspopup="true"
           onClick={handleMenu}>
-          My Account
+          <Trans>My Account</Trans>
           <AccountCircle className={classes.icon} />
         </Button>
       </div>
@@ -122,8 +123,12 @@ function AccountMenu() {
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         open={Boolean(anchorEl)}
         onClose={closeAccountMenu}>
-        <MenuItem onClick={goToAccount}>Account Settings</MenuItem>
-        <MenuItem onClick={handleLogout}>Sign Out</MenuItem>
+        <MenuItem onClick={goToAccount}>
+          <Trans>Account Settings</Trans>
+        </MenuItem>
+        <MenuItem onClick={handleLogout}>
+          <Trans>Sign Out</Trans>
+        </MenuItem>
       </Menu>
     </>
   )
