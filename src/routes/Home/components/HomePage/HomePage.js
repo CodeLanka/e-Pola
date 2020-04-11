@@ -114,10 +114,7 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  <Trans>
-                    <Trans>Step</Trans>
-                  </Trans>{' '}
-                  1
+                  <Trans>Step</Trans> 1
                   <span className={classes.checkmark}>
                     {authExists && <DoneIcon />}
                   </span>
