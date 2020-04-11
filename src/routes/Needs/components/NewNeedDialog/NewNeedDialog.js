@@ -62,7 +62,9 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
       <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
         <DialogContent>
           <FormControl className={classes.selection}>
-            <InputLabel id="catagories"><Trans>Category</Trans></InputLabel>
+            <InputLabel id="catagories">
+              <Trans>Category</Trans>
+            </InputLabel>
             <Select
               labelId="catagories"
               id="catagories-list"
@@ -74,7 +76,7 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
               name="category"
               defaultValue="">
               <MenuItem value="dairy">
-                <Trans> Dairy</Trans>{' '}
+                <Trans>Dairy</Trans>{' '}
                 <span className={classes.emojis} role="img" alt="Dairy">
                   🧀🥛
                 </span>
@@ -95,7 +97,7 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
                 </span>
               </MenuItem>
               <MenuItem value="grains">
-                Grains{' '}
+                <Trans>Grains</Trans>{' '}
                 <span className={classes.emojis} role="img" alt="Grains">
                   🌾🍚
                 </span>
@@ -107,7 +109,7 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
                 </span>
               </MenuItem>
               <MenuItem value="pharmaceuticals">
-                <Trans> Pharmacy Items</Trans>{' '}
+                <Trans>Pharmacy Items</Trans>{' '}
                 <span className={classes.emojis} role="img" alt="Grocery Items">
                   💊
                 </span>
@@ -117,7 +119,9 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
           <br />
           <br />
           <FormControl className={classes.selection}>
-            <InputLabel id="product"><Trans>Products</Trans></InputLabel>
+            <InputLabel id="product">
+              <Trans>Products</Trans>
+            </InputLabel>
             <Controller
               as={
                 <Select
