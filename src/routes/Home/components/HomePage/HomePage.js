@@ -1,6 +1,5 @@
 import React from 'react'
 
-// import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
@@ -16,6 +15,7 @@ import {
   useFirestore,
   useFirestoreConnect
 } from 'react-redux-firebase'
+import { Trans } from 'react-i18next'
 
 import DoneIcon from '@material-ui/icons/Done'
 
@@ -60,12 +60,15 @@ function Home() {
             }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            Worried about basic rations during the curfew? <br />
-            GIVEME.lk is here to voice your needs.
+            <Trans>
+              Worried about basic rations during the curfew?
+              <br />
+              GIVEME.lk is here to voice your needs.
+            </Trans>
           </Typography>
           <br />
           <Typography variant="subtitle2" gutterBottom>
-            Developed By:
+            <Trans>Developed By</Trans>:
           </Typography>
           <a
             href="http://codelanka.org"
@@ -89,12 +92,16 @@ function Home() {
           </a>
         </Grid>
         <Grid item xs={12} sm={6} className={classes.rightSide}>
-          <Typography variant="h4" gutterBottom classNAME={classes.welcome}>
-            Welcome to GIVE<strong className={classes.strong}>ME</strong>.lk!
+          <Typography variant="h4" gutterBottom className={classes.welcome}>
+            <Trans>
+              Welcome to GIVE<strong className={classes.strong}>ME</strong>.lk!
+            </Trans>
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Log-in and start adding your requirements to GiveME. This is how you
-            do that...
+            <Trans>
+              Log-in and start adding your requirements to GiveME. This is how
+              you do that...
+            </Trans>
           </Typography>
 
           <Card className={classes.cardRoot}>
@@ -107,14 +114,19 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  Step 1{' '}
+                  <Trans>
+                    <Trans>Step</Trans>
+                  </Trans>{' '}
+                  1
                   <span className={classes.checkmark}>
                     {authExists && <DoneIcon />}
                   </span>
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  You log in to GIVE
-                  <strong className={classes.strong}>ME</strong>.
+                  <Trans>
+                    You log in to GIVE
+                    <strong className={classes.strong}>ME</strong>.
+                  </Trans>
                 </Typography>
               </CardContent>
             </div>
@@ -130,13 +142,13 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  Step 2{' '}
+                  <Trans>Step</Trans> 2
                   <span className={classes.checkmark}>
                     {hasUserAddedItems && <DoneIcon />}
                   </span>
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  You request items that you need
+                  <Trans>You request items that you need</Trans>
                 </Typography>
               </CardContent>
             </div>
@@ -152,10 +164,10 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  Step 3
+                  <Trans>Step</Trans> 3
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Authorized vendors see your requirements
+                  <Trans>Authorized vendors see your requirements</Trans>
                 </Typography>
               </CardContent>
             </div>
@@ -171,10 +183,10 @@ function Home() {
             <div>
               <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
-                  Step 4
+                  <Trans>Step</Trans> 4
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Vendors will come and fulfill your needs.
+                  <Trans>Vendors will come and fulfill your needs.</Trans>
                 </Typography>
               </CardContent>
             </div>
