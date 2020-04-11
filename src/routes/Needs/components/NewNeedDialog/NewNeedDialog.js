@@ -15,6 +15,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import { useSelector } from 'react-redux'
 import { useFirestoreConnect, isEmpty } from 'react-redux-firebase'
+import { Trans } from 'react-i18next'
 
 const useStyles = makeStyles(styles)
 
@@ -56,12 +57,12 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
   return (
     <Dialog open={open} onClose={onRequestClose}>
       <DialogTitle id="new-need-dialog-title" color="secondary">
-        What do you want?
+        <Trans>What do you want?</Trans>
       </DialogTitle>
       <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
         <DialogContent>
           <FormControl className={classes.selection}>
-            <InputLabel id="catagories">Category</InputLabel>
+            <InputLabel id="catagories"><Trans>Category</Trans></InputLabel>
             <Select
               labelId="catagories"
               id="catagories-list"
@@ -73,13 +74,13 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
               name="category"
               defaultValue="">
               <MenuItem value="dairy">
-                Dairy{' '}
+                <Trans> Dairy</Trans>{' '}
                 <span className={classes.emojis} role="img" alt="Dairy">
                   🧀🥛
                 </span>
               </MenuItem>
               <MenuItem value="meat">
-                Meat, Seafood & Poultry{' '}
+                <Trans>Meat, Seafood & Poultry</Trans>{' '}
                 <span
                   className={classes.emojis}
                   role="img"
@@ -88,7 +89,7 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
                 </span>
               </MenuItem>
               <MenuItem value="vegetables">
-                Vegetables{' '}
+                <Trans>Vegetables</Trans>{' '}
                 <span className={classes.emojis} role="img" alt="Vegetables">
                   🥔🥕🍆
                 </span>
@@ -100,13 +101,13 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
                 </span>
               </MenuItem>
               <MenuItem value="grocery">
-                Grocery Items{' '}
+                <Trans>Grocery Items</Trans>{' '}
                 <span className={classes.emojis} role="img" alt="Grocery Items">
                   🍛
                 </span>
               </MenuItem>
               <MenuItem value="pharmaceuticals">
-                Pharmacy Items{' '}
+                <Trans> Pharmacy Items</Trans>{' '}
                 <span className={classes.emojis} role="img" alt="Grocery Items">
                   💊
                 </span>
@@ -116,7 +117,7 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
           <br />
           <br />
           <FormControl className={classes.selection}>
-            <InputLabel id="product">Products</InputLabel>
+            <InputLabel id="product"><Trans>Products</Trans></InputLabel>
             <Controller
               as={
                 <Select

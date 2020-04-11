@@ -32,7 +32,23 @@
       "My Requests": "මගේ ඉල්ලීම්",
       "My Account": "මගේ ගිණුම",
       "Account Settings": "ගිණුම් සැකසුම්",
-      "Sign Out": "වරන්න"
+      "Sign Out": "වරන්න",
+      "Sign In": "පුරන්න",
+      "Request new item": "නව අයිතමයක් ඉල්ලන්න",
+      "Your Needs List": "ඔබේ අවශ්යතා ලැයිස්තුව",
+      "What do you want?": "ඔබට අවශය මොනවාද ?",
+      "Category": "වර්ගය",
+      "Dairy": "කිරි",
+      "Meat, Seafood & Poultry": "මස්, මුහුදු ආහාර සහ කුකුළු මස්",
+      "Vegetables": "එළවළු",
+      "Grains": "ධාන්ය වර්ග",
+      "Grocery Items": "සිල්ලර බඩු",
+      "Pharmacy Items": "ඖෂධ වර්ග",
+      "Products": "නිෂ්පාදන"
+
+
+
+
     }
   }
 }

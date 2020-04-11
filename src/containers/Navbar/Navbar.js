@@ -8,6 +8,7 @@ import { LOGIN_PATH } from 'constants/paths'
 import AccountMenu from './AccountMenu'
 import NavbarWithoutAuth from './NavbarWithoutAuth'
 import styles from './Navbar.styles'
+import { Trans } from 'react-i18next'
 
 const useStyles = makeStyles(styles)
 
@@ -29,7 +30,7 @@ function Navbar() {
           to={LOGIN_PATH}
           color="secondary"
           data-test="sign-in">
-          Sign In
+          <Trans> Sign In </Trans>
         </Button>
       )}
     </NavbarWithoutAuth>

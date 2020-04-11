@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from './NewNeedTile.styles'
 import { Typography } from '@material-ui/core'
+import { Trans } from 'react-i18next'
 
 const useStyles = makeStyles(styles)
 
@@ -15,7 +16,7 @@ function NewNeedTile({ onClick }) {
     <Paper className={classes.root} onClick={onClick}>
       <ContentAddCircle className={classes.newIcon} />
       <Typography variant="h6" color="secondary">
-        Request new item
+          <Trans>Request new item </Trans>
       </Typography>
     </Paper>
   )
