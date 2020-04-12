@@ -13,6 +13,7 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import PhoneIcon from '@material-ui/icons/Phone'
 import FingerprintIcon from '@material-ui/icons/Fingerprint'
 import RoomIcon from '@material-ui/icons/Room'
+import { Trans } from 'react-i18next'
 
 const useStyles = makeStyles(styles)
 
@@ -33,11 +34,11 @@ function AccountForm({ account, onSubmit }) {
     <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
       <div className={classes.fields}>
         <Typography variant="h4" className={classes.settingsTitle}>
-          Account Settings
+          <Trans>Account Settings</Trans>
         </Typography>
         <TextField
           name="displayName"
-          label="Display Name"
+          label={<Trans>Display Name</Trans>}
           margin="normal"
           fullWidth
           variant="outlined"
@@ -52,7 +53,7 @@ function AccountForm({ account, onSubmit }) {
         />
         <TextField
           name="contactNumber"
-          label="Contact Number"
+          label={<Trans>Contact Number</Trans>}
           margin="normal"
           fullWidth
           variant="outlined"
@@ -67,7 +68,7 @@ function AccountForm({ account, onSubmit }) {
         />
         <TextField
           name="identityNumber"
-          label="NIC Number"
+          label={<Trans>NIC Number</Trans>}
           margin="normal"
           fullWidth
           variant="outlined"
@@ -82,7 +83,7 @@ function AccountForm({ account, onSubmit }) {
         />
         <TextField
           name="address"
-          label="Delivery Address"
+          label={<Trans>Delivery Address</Trans>}
           margin="normal"
           fullWidth
           variant="outlined"
@@ -96,7 +97,7 @@ function AccountForm({ account, onSubmit }) {
           }}
         />
         <TextField
-          label="Your Email"
+          label={<Trans>Your Email</Trans>}
           type="email"
           name="email"
           placeholder="email"
@@ -126,7 +127,7 @@ function AccountForm({ account, onSubmit }) {
           type="submit"
           variant="outlined"
           disabled={isSubmitting || !isValid}>
-          {isSubmitting ? 'Saving' : 'Save'}
+          {isSubmitting ? <Trans>Saving</Trans> : <Trans>Save</Trans>}
         </Button>
       </div>
     </form>

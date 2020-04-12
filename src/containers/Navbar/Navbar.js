@@ -30,7 +30,7 @@ function Navbar() {
           to={LOGIN_PATH}
           color="secondary"
           data-test="sign-in">
-          <Trans> Sign In </Trans>
+          <Trans>Sign In</Trans>
         </Button>
       )}
     </NavbarWithoutAuth>

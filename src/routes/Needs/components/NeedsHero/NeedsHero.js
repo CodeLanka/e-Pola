@@ -13,8 +13,12 @@ function NeedsHero({ onClick }) {
 
   return (
     <Paper className={classes.root} onClick={onClick}>
-      <Typography variant="h4">Hello User!</Typography>
-        <Typography variant="h6"><Trans>Your Needs List</Trans></Typography>
+      <Typography variant="h4">
+        <Trans>Hello User</Trans>!
+      </Typography>
+      <Typography variant="h6">
+        <Trans>Your Needs List</Trans>
+      </Typography>
     </Paper>
   )
 }
