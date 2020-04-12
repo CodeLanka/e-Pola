@@ -146,7 +146,9 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
           <br />
           <br />
           <FormControl className={classes.selection}>
-            <InputLabel id="amount">How much?</InputLabel>
+            <InputLabel id="amount">
+              <Trans>How much?</Trans>
+            </InputLabel>
             <Controller
               as={
                 <Select disabled={!product} labelId="amount" name="amount">
@@ -174,13 +176,17 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={onRequestClose} color="secondary">
-            Cancel
+            <Trans>Cancel</Trans>
           </Button>
           <Button
             type="submit"
             color="primary"
             disabled={isSubmitting || !isValid}>
-            {isSubmitting ? 'Requesting...' : 'Request'}
+            {isSubmitting ? (
+              <Trans>Requesting...</Trans>
+            ) : (
+              <Trans>Request</Trans>
+            )}
           </Button>
         </DialogActions>
       </form>

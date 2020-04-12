@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import { validateEmail } from 'utils/form'
 import styles from './LoginForm.styles'
+import { Trans } from 'react-i18next'
 
 const useStyles = makeStyles(styles)
 
@@ -27,7 +28,7 @@ function LoginForm({ onSubmit }) {
         type="email"
         varient="outlined"
         name="email"
-        label="Your Email Here..."
+        label={<Trans>Your email here...</Trans>}
         margin="normal"
         fullWidth
         inputRef={register({
@@ -35,20 +36,20 @@ function LoginForm({ onSubmit }) {
           validate: validateEmail
         })}
         error={!!errors.email}
-        helperText={errors.email && 'Email must be valid'}
+        helperText={errors.email && <Trans>Email must be valid</Trans>}
       />
       <TextField
         type="password"
         varient="outlined"
         name="password"
-        label="Your Password Here..."
+        label={<Trans>Your password here...</Trans>}
         margin="normal"
         fullWidth
         inputRef={register({
           required: true
         })}
         error={!!errors.password}
-        helperText={errors.password && 'Password is required'}
+        helperText={errors.password && <Trans>Password is required</Trans>}
       />
       <div className={classes.submit}>
         <Button
@@ -56,7 +57,7 @@ function LoginForm({ onSubmit }) {
           type="submit"
           variant="contained"
           disabled={isSubmitting || !isValid}>
-          {isSubmitting ? 'Loading' : 'Login'}
+          {isSubmitting ? <Trans>Loading</Trans> : <Trans>Login</Trans>}
         </Button>
       </div>
     </form>

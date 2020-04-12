@@ -10,6 +10,7 @@ import LoginForm from '../LoginForm'
 import styles from './LoginPage.styles'
 import Image from 'material-ui-image'
 import logo from './logo.png'
+import { Trans } from 'react-i18next'
 
 const useStyles = makeStyles(styles)
 
@@ -51,21 +52,23 @@ function LoginPage() {
             }}
           />
           <LoginForm onSubmit={emailLogin} onSubmitFail={onSubmitFail} />
+          <div className={classes.signup}>
+            <span className={classes.signupLabel}>
+              <Trans>Not Registered Yet?</Trans>
+            </span>
+            <Link className={classes.signupLink} to={SIGNUP_PATH}>
+              <Trans>Sign Up</Trans>
+            </Link>
+          </div>
           <hr className={classes.hr} />
           <div className={classes.orLabel}>
-            Use your Google Account to Sign In
+            <Trans>Use your Google Account to Sign In</Trans>
           </div>
           <div className={classes.providers}>
             <GoogleButton
               onClick={googleLogin}
               data-test="google-auth-button"
             />
-          </div>
-          <div className={classes.signup}>
-            <span className={classes.signupLabel}>Not Registered Yet?</span>
-            <Link className={classes.signupLink} to={SIGNUP_PATH}>
-              Sign Up
-            </Link>
           </div>
         </Paper>
         <div />

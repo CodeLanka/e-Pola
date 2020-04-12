@@ -16,7 +16,7 @@ function NewNeedTile({ onClick }) {
     <Paper className={classes.root} onClick={onClick}>
       <ContentAddCircle className={classes.newIcon} />
       <Typography variant="h6" color="secondary">
-          <Trans>Request new item </Trans>
+        <Trans>Request new item</Trans>
       </Typography>
     </Paper>
   )
