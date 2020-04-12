@@ -57,6 +57,7 @@
       "NIC Number": "හැඳුනුම්පත් අංකය",
       "Saving": "වෙනස් වෙමින් පවතී",
       "Save": "වෙනස් කරන්න",
+      "Linked Accounts": "සම්බන්ධිත ගිණුම්",
       "Your email here...": "විද්‍යුත් තැපෑල (ඊ මේල් එක) මෙතන ඇතුල් කරන්න",
       "Email must be valid": "විද්‍යුත් තැපෑල (ඊ මේල් එක) එක වැරදීද බලන්න. එය නිවැරදි විය යුතුයි",
       "Your password here...": "මුරපදය (පාස්වර්ඩ් එක) මෙතන ඇතුල් කරන්න",
@@ -65,7 +66,12 @@
       "Login": "Login වෙන්න",
       "Not Registered Yet?": "ඔබ අප සමඟ ලියාපදිංච් වෙලා නැද්ද?",
       "Sign Up": "ලියාපදිංචි වෙන්න",
-      "Use your Google Account to Sign In": "ඔබේ Google ගිණුමෙන් GiveMe.lk පාවිච්චි කරන්න හැකියි"
+      "Use your Google Account to Sign In": "ඔබේ Google ගිණුමෙන් GiveMe.lk පාවිච්චි කරන්න හැකියි",
+      "About GiveME.lk": "GiveME.lk ගැන",
+      "What is GiveME.lk?": "GiveME.lk යනු කුමක්ද?",
+      "GiveME.lk is a platform aimed at connecting people with wholesale and retail businesses during the SARS-CoV-2 breakout's social distancing period. Our goal is to tell the sellers where the requirement exists for their produce to make the home delivery more efficient for them and more effective for people who are expecting goods and services.": "GiveME.lk යනු SARS-CoV-2 සමාජ දුරස්ථ කාල පරිච්ඡේදය තුළ තොග හා සිල්ලර ව්‍යාපාර සමඟ පුද්ගලයින් සම්බන්ධ කිරීම අරමුණු කරගත් වේදිකාවකි. අපගේ ඉලක්කය වන්නේ විකුණුම්කරුවන්ට ඔවුන්ගේ නිෂ්පාදන සඳහා අවශ්‍යතාවය පවතින්නේ කොතැනද යන්න කීමෙන් ඔවුන්ට සැපයුම වඩාත් කාර්යක්ෂම කිරීමටයි. භාණ්ඩ හා සේවා අපේක්ෂා කරන පුද්ගලයින් සඳහා මෙමඟින් වඩාත් ඵලදායී සේවාවක් සැපයීමට ඔවුනට හැකිවනු ඇත.",
+      "This is an idea by the co-founders of Siyomek, Harshadewa Ariyasinghe and Keshan Sodimana. The project is run as an open-sourced project by CodeLanka. Codelanka is an initiative by GDG Sri Lanka to code things that make sense to the public, irrespective of the existence of a financial gain.": "මෙය Siyomek සම නිර්මාතෘන් වන හර්ෂදේව ආරියසිංහ සහ කේෂන් සෝදිමාන මහත්වරුන්ගේ අදහසකි. මෙම ව්‍යාපෘතිය CodeLanka විසින් විවෘතකේත ව්‍යාපෘතියක් ලෙස ක්‍රියාත්මක වේ. CodeLanka යනු මූල්‍යමය වාසියක් නොතකා මහජනයාට අර්ථවත් වන දේ කේත කිරීමට GDG SriLanka වීසින් ගත් මුලපිරීමකි.",
+      "Who is involved?": "සම්බන්ධ වන්නේ කවුද?"
     }
   }
 }
