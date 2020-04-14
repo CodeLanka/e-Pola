@@ -13,7 +13,7 @@ import styles from './NeedTile.styles'
 
 const useStyles = makeStyles(styles)
 
-function NeedTile({ name, needId, amount, showDelete }) {
+function NeedTile({ status, name, needId, amount, showDelete }) {
   const classes = useStyles()
   const firestore = useFirestore()
   const { showError, showSuccess } = useNotifications()
@@ -48,6 +48,7 @@ function NeedTile({ name, needId, amount, showDelete }) {
       </div>
       <span className={classes.qty}>Qty:</span>
       <span className={classes.amount}>{amount || ''}</span>
+      <i>{status || ''}</i>
     </Paper>
   )
 }
@@ -56,7 +57,8 @@ NeedTile.propTypes = {
   needId: PropTypes.string.isRequired,
   showDelete: PropTypes.bool,
   name: PropTypes.string,
-  amount: PropTypes.string
+  amount: PropTypes.string,
+  status: PropTypes.string
 }
 
 NeedTile.defaultProps = {
