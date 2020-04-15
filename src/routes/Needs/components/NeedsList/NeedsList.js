@@ -102,6 +102,7 @@ function NeedsList() {
                 name={need && need.name}
                 amount={need && need.amount}
                 needId={need.id}
+                status={need.status}
               />
             )
           })}

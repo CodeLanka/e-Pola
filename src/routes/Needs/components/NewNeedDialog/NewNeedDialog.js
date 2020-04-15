@@ -77,7 +77,11 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
               defaultValue="">
               <MenuItem value="dairy">
                 <Trans>Dairy</Trans>{' '}
-                <span className={classes.emojis} role="img" alt="Dairy">
+                <span
+                  className={classes.emojis}
+                  role="img"
+                  alt="Dairy"
+                  aria-label="emoji">
                   🧀🥛
                 </span>
               </MenuItem>
@@ -86,31 +90,48 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
                 <span
                   className={classes.emojis}
                   role="img"
+                  aria-label="emoji"
                   alt="Meat, Seafood & Poultry">
                   🥩🐔🍤
                 </span>
               </MenuItem>
               <MenuItem value="vegetables">
                 <Trans>Vegetables</Trans>{' '}
-                <span className={classes.emojis} role="img" alt="Vegetables">
+                <span
+                  className={classes.emojis}
+                  role="img"
+                  alt="Vegetables"
+                  aria-label="emoji">
                   🥔🥕🍆
                 </span>
               </MenuItem>
               <MenuItem value="grains">
                 <Trans>Grains</Trans>{' '}
-                <span className={classes.emojis} role="img" alt="Grains">
+                <span
+                  className={classes.emojis}
+                  role="img"
+                  alt="Grains"
+                  aria-label="emoji">
                   🌾🍚
                 </span>
               </MenuItem>
               <MenuItem value="grocery">
                 <Trans>Grocery Items</Trans>{' '}
-                <span className={classes.emojis} role="img" alt="Grocery Items">
+                <span
+                  className={classes.emojis}
+                  role="img"
+                  alt="Grocery Items"
+                  aria-label="emoji">
                   🍛
                 </span>
               </MenuItem>
               <MenuItem value="pharmaceuticals">
                 <Trans>Pharmacy Items</Trans>{' '}
-                <span className={classes.emojis} role="img" alt="Grocery Items">
+                <span
+                  className={classes.emojis}
+                  role="img"
+                  alt="Grocery Items"
+                  aria-label="emoji">
                   💊
                 </span>
               </MenuItem>
