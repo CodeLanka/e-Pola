@@ -4,7 +4,7 @@ export default (theme) => ({
     ...theme.flexRowCenter,
     alignItems: 'center',
     cursor: 'pointer',
-    height: '150px',
+    height: '160px',
     width: '300px',
     margin: theme.spacing(0.5),
     padding: theme.spacing(1.3),

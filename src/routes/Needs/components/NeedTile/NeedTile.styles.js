@@ -4,7 +4,7 @@ export default (theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    height: '150px',
+    height: '160px',
     width: '300px',
     margin: theme.spacing(0.5),
     padding: theme.spacing(1.3),
@@ -37,11 +37,20 @@ export default (theme) => ({
     color: '#363636',
     textDecoration: 'none',
     textOverflow: 'ellipsis',
-    overflow: 'hidden',
     whiteSpace: 'nowrap'
   },
   qty: {
     marginTop: '0.5rem',
     color: '#363636'
+  },
+  status: {
+    fontSize: '0.8rem',
+    color: '#363636',
+    textAlign: 'right'
+  },
+  statusWrapper: {
+    alignSelf: 'normal',
+    marginTop: '10px',
+    marginBottom: '5px'
   }
 })

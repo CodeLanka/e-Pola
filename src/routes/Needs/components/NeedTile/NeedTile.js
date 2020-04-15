@@ -8,6 +8,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import { makeStyles } from '@material-ui/core/styles'
 import useNotifications from 'modules/notification/useNotifications'
 import styles from './NeedTile.styles'
+import { Typography } from '@material-ui/core'
 // import { useHistory } from 'react-router-dom'
 // import { NEEDS_PATH } from 'constants/paths'
 
@@ -18,7 +19,6 @@ function NeedTile({ status, name, needId, amount, showDelete }) {
   const firestore = useFirestore()
   const { showError, showSuccess } = useNotifications()
   // const history = useHistory()
-
   // function goToNeed() {
   //   return history.push(`${NEEDS_PATH}/${needId}`)
   // }
@@ -48,7 +48,11 @@ function NeedTile({ status, name, needId, amount, showDelete }) {
       </div>
       <span className={classes.qty}>Qty:</span>
       <span className={classes.amount}>{amount || ''}</span>
-      <i>{status || ''}</i>
+      <div className={classes.statusWrapper}>
+        <Typography variant="h6" className={classes.status}>
+          {status ? '🔴 DELIVERING' : ''}
+        </Typography>
+      </div>
     </Paper>
   )
 }
