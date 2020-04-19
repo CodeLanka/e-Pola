@@ -1,12 +1,14 @@
+import amber from '@material-ui/core/colors/amber'
 export default (theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    height: '200px',
+    height: '150px',
     width: '300px',
     margin: theme.spacing(0.5),
-    padding: theme.spacing(1.3)
+    padding: theme.spacing(1.3),
+    backgroundColor: amber[300]
   },
   top: {
     display: 'flex',
@@ -14,13 +16,15 @@ export default (theme) => ({
     width: '100%'
   },
   name: {
-    fontSize: '1.5rem',
+    marginTop: '1rem',
+    fontSize: '2.5rem',
     cursor: 'pointer',
     textDecoration: 'none',
     transition: 'all 800ms cubic-bezier(0.25,0.1,0.25,1) 0ms',
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
+    color: '#363636',
     '&:hover': {
       color: ''
     },
@@ -30,10 +34,14 @@ export default (theme) => ({
   },
   amount: {
     fontSize: '1.5rem',
-    fontColor: '#333',
+    color: '#363636',
     textDecoration: 'none',
     textOverflow: 'ellipsis',
     overflow: 'hidden',
-    whiteSpace: 'nowrap',
+    whiteSpace: 'nowrap'
+  },
+  qty: {
+    marginTop: '0.5rem',
+    color: '#363636'
   }
 })

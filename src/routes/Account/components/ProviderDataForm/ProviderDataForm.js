@@ -4,12 +4,11 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import ListSubheader from '@material-ui/core/ListSubheader'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 
 function ProviderData({ providerData }) {
   return (
-    <List subheader={<ListSubheader>Accounts</ListSubheader>}>
+    <List>
       {providerData.map((providerAccount) => (
         <ListItem key={`Provider-${providerAccount.providerId}`}>
           <ListItemIcon>

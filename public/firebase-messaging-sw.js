@@ -25,12 +25,12 @@ messaging.setBackgroundMessageHandler(function (payload) {
     '[firebase-messaging-sw.js] Received background message ',
     payload
   )
-  
+
   // Customize default notification here
-  const notificationTitle = 'Myproject'
+  const notificationTitle = 'GiveMe.lk'
   const notificationOptions = {
-    body: 'Background Message body.',
-    icon: '/firebase-logo.png'
+    body: 'Welcome to GiveMe.lk',
+    icon: '/favicon.ico'
   }
 
   return self.registration.showNotification( // eslint-disable-line no-undef

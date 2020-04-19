@@ -28,9 +28,7 @@ function NeedData() {
 
   return (
     <CardContent>
-      <Typography component="h2">
-        {(need && need.name) || 'Need'}
-      </Typography>
+      <Typography component="h2">{(need && need.name) || 'Need'}</Typography>
       <Typography>{needId}</Typography>
       <div style={{ marginTop: '4rem' }}>
         <pre>{JSON.stringify(need, null, 2)}</pre>

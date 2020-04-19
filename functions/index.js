@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const glob = require('glob')
 const path = require('path')
 const admin = require('firebase-admin')
@@ -34,7 +36,7 @@ const files = glob.sync(codeFolder + '/**/index.js', {
 
 // Loop over all folders found within dist loading only the relevant function
 // instead of all functions. Done to help improve function cold start times.
-files.forEach(functionFile => {
+files.forEach((functionFile) => {
   // Get folder name from file name (removing any dashes)
   const folderName = path
     .basename(path.dirname(functionFile))

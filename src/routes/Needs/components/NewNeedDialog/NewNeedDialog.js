@@ -15,12 +15,13 @@ import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import { useSelector } from 'react-redux'
 import { useFirestoreConnect, isEmpty } from 'react-redux-firebase'
+import { Trans } from 'react-i18next'
 
 const useStyles = makeStyles(styles)
 
 function NewNeedDialog({ onSubmit, open, onRequestClose }) {
   const classes = useStyles()
-  const [catagory, setCatagory] = React.useState('')
+  const [category, setCategory] = React.useState('')
   const [product, setProduct] = React.useState('')
   const {
     control,
@@ -31,13 +32,13 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
 
   useFirestoreConnect({
     collection: 'products',
-    where: ['catagory', '==', catagory]
+    where: ['category', '==', category]
   })
 
   const products = useSelector(({ firestore: { ordered } }) => ordered.products)
 
   const handleChange = (event) => {
-    setCatagory(event.target.value)
+    setCategory(event.target.value)
     setProduct('')
   }
 
@@ -55,33 +56,72 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
 
   return (
     <Dialog open={open} onClose={onRequestClose}>
-      <DialogTitle id="new-need-dialog-title">What you want?</DialogTitle>
+      <DialogTitle id="new-need-dialog-title" color="secondary">
+        <Trans>What do you want?</Trans>
+      </DialogTitle>
       <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
         <DialogContent>
           <FormControl className={classes.selection}>
-            <InputLabel id="catagories">Catagory</InputLabel>
+            <InputLabel id="catagories">
+              <Trans>Category</Trans>
+            </InputLabel>
             <Select
               labelId="catagories"
               id="catagories-list"
-              value={catagory}
+              value={category}
               onChange={handleChange}
               inputRef={register({
                 required: true
               })}
-              name="catagory"
+              name="category"
               defaultValue="">
-              <MenuItem value="dairy">Dairy</MenuItem>
-              <MenuItem value="meat">Meat</MenuItem>
-              <MenuItem value="vegies">Vegies</MenuItem>
-              <MenuItem value="grains">Grains</MenuItem>
-              <MenuItem value="poluty">Poluty</MenuItem>
-              <MenuItem value="pharmacy">Pharmacy</MenuItem>
+              <MenuItem value="dairy">
+                <Trans>Dairy</Trans>{' '}
+                <span className={classes.emojis} role="img" alt="Dairy">
+                  🧀🥛
+                </span>
+              </MenuItem>
+              <MenuItem value="meat">
+                <Trans>Meat, Seafood & Poultry</Trans>{' '}
+                <span
+                  className={classes.emojis}
+                  role="img"
+                  alt="Meat, Seafood & Poultry">
+                  🥩🐔🍤
+                </span>
+              </MenuItem>
+              <MenuItem value="vegetables">
+                <Trans>Vegetables</Trans>{' '}
+                <span className={classes.emojis} role="img" alt="Vegetables">
+                  🥔🥕🍆
+                </span>
+              </MenuItem>
+              <MenuItem value="grains">
+                <Trans>Grains</Trans>{' '}
+                <span className={classes.emojis} role="img" alt="Grains">
+                  🌾🍚
+                </span>
+              </MenuItem>
+              <MenuItem value="grocery">
+                <Trans>Grocery Items</Trans>{' '}
+                <span className={classes.emojis} role="img" alt="Grocery Items">
+                  🍛
+                </span>
+              </MenuItem>
+              <MenuItem value="pharmaceuticals">
+                <Trans>Pharmacy Items</Trans>{' '}
+                <span className={classes.emojis} role="img" alt="Grocery Items">
+                  💊
+                </span>
+              </MenuItem>
             </Select>
           </FormControl>
           <br />
           <br />
           <FormControl className={classes.selection}>
-            <InputLabel id="product">Products</InputLabel>
+            <InputLabel id="product">
+              <Trans>Products</Trans>
+            </InputLabel>
             <Controller
               as={
                 <Select
@@ -106,7 +146,9 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
           <br />
           <br />
           <FormControl className={classes.selection}>
-            <InputLabel id="amount">How much?</InputLabel>
+            <InputLabel id="amount">
+              <Trans>How much?</Trans>
+            </InputLabel>
             <Controller
               as={
                 <Select disabled={!product} labelId="amount" name="amount">
@@ -134,13 +176,17 @@ function NewNeedDialog({ onSubmit, open, onRequestClose }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={onRequestClose} color="secondary">
-            Cancel
+            <Trans>Cancel</Trans>
           </Button>
           <Button
             type="submit"
             color="primary"
             disabled={isSubmitting || !isValid}>
-            {isSubmitting ? 'Requesting...' : 'Request'}
+            {isSubmitting ? (
+              <Trans>Requesting...</Trans>
+            ) : (
+              <Trans>Request</Trans>
+            )}
           </Button>
         </DialogActions>
       </form>

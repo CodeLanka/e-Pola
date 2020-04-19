@@ -1,7 +1,8 @@
 export default (theme) => ({
   root: {
     padding: theme.spacing(2),
-    width: '300px'
+    width: '500px',
+    maxWidth: '100%'
   },
   inputs: {
     ...theme.flexColumnCenter
@@ -10,6 +11,9 @@ export default (theme) => ({
     width: '100%'
   },
   buttons: {
-    ...theme.flexColumnCenter,
+    ...theme.flexColumnCenter
+  },
+  emojis: {
+    fontSize: '35px'
   }
 })

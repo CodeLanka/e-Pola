@@ -1,3 +1,5 @@
+import amber from '@material-ui/core/colors/amber'
+
 export default (theme) => ({
   root: {
     paddingTop: theme.spacing(3),
@@ -11,6 +13,9 @@ export default (theme) => ({
   pane: {
     ...theme.flexColumnCenter,
     justifyContent: 'space-around',
-    padding: theme.spacing(6)
+    padding: theme.spacing(6),
+    backgroundColor: '#fff',
+    border: '5px solid',
+    borderColor: amber[300]
   }
 })

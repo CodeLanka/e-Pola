@@ -66,5 +66,8 @@ module.exports = {
         'import/no-dynamic-require': 0
       }
     }
-  ]
+  ],
+  globals: {
+    "fetch": false
+  }
 }
